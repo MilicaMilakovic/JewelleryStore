@@ -1,0 +1,18 @@
+﻿<Window x:Class="JewelleryStore.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JewelleryStore"
+        mc:Ignorable="d"
+        Title="Login" Height="400" Width="600"
+        WindowStartupLocation="CenterScreen">
+        
+    <Grid>
+        <Canvas>
+            <TextBox x:Name="username" Width="170" Height="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Canvas.Left="201" Canvas.Top="93" ></TextBox>
+            <PasswordBox x:Name="password" Width="170" Height="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Canvas.Left="201" Canvas.Top="161"></PasswordBox>
+            <Button x:Name="loginBtn" Click="LogIn" Width="170" Height="36" Foreground="Black" FontWeight="Bold" Canvas.Left="201" Canvas.Top="224">Login</Button>
+        </Canvas>
+    </Grid>
+</Window>
