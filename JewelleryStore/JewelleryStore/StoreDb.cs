@@ -8,7 +8,7 @@ namespace JewelleryStore
     public partial class StoreDb : DbContext
     {
         public StoreDb()
-            : base("name=StoreDb1")
+            : base("name=StoreDb2")
         {
         }
 

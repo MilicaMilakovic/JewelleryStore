@@ -16,7 +16,6 @@ namespace JewelleryStore
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int idRacuna { get; set; }
 
         public DateTime DatumIzdavanja { get; set; }

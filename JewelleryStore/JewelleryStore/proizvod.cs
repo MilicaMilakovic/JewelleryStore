@@ -16,7 +16,6 @@ namespace JewelleryStore
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SifraProizvoda { get; set; }
 
         [Required]

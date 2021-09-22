@@ -38,67 +38,89 @@
                 <RowDefinition Height="64" />
             </Grid.RowDefinitions>
 
-            <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="3" Background="WhiteSmoke">
+            <Image Source="/images/mainPhoto.jpg" Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" Stretch="UniformToFill" />
+
+
+            <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="3" Background="WhiteSmoke" Margin="0,10,0,0">
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="165*"/>
-                    <ColumnDefinition Width="10*"/>
-                    <ColumnDefinition Width="175*"/>
-                    <ColumnDefinition Width="175*"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="168*"/>
-                    <RowDefinition Height="151*"/>
-                    <RowDefinition Height="171"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <ScrollBar Grid.Column="4" Margin="158,0,0,0" Grid.RowSpan="3" Width="Auto"></ScrollBar>
+                <ScrollBar Grid.Column="4" Margin="158,0,0,0" Grid.RowSpan="3" Width="Auto"/>
 
-                <Canvas  Grid.Row="0" Grid.Column="1" Margin="5,5,5,0" Background="WhiteSmoke" Grid.ColumnSpan="2">
-                    <Image HorizontalAlignment="Center" Source="/images/1.jpg" Width="130" Height="126" Canvas.Left="6" Canvas.Top="5" />
-                    <TextBlock FontSize="10" Canvas.Left="10" Canvas.Top="134" Height="16" Width="121">Air Element Gold Necklace
-                    </TextBlock>
-                    <TextBlock  FontWeight="DemiBold" Text="80KM" Canvas.Left="52" Canvas.Top="145"/>
+                <Canvas  Grid.Row="0" Grid.Column="0" Margin="5,5,5,0" Background="WhiteSmoke" Grid.ColumnSpan="1 " Grid.RowSpan="1">
+                    <Image HorizontalAlignment="Center" Source="/images/1.jpg" Width="130" Height="126" Canvas.Left="13" />
+                    <TextBlock FontSize="10" Canvas.Left="21" Canvas.Top="126" Height="11" Width="118"><Run Text="Air Element Gold Necklace"/></TextBlock>
+                    <TextBlock  FontWeight="DemiBold" Text="80KM" Canvas.Left="62" Canvas.Top="139"/>
                 </Canvas>
             </Grid>
 
-            <Image Source="/images/logo.png" Grid.Column="0" Grid.ColumnSpan="2"/>
-            <Separator Grid.Column="3" Grid.Row="1" VerticalAlignment="Top" Foreground="Beige" Height="5" Margin="0"></Separator>
-            <Image Source="/images/mainPhoto.jpg" Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" Stretch="UniformToFill" />
 
-            <Button Grid.Column="3" Click="CloseApp" 
-              Style="{StaticResource MaterialDesignIconForegroundButton}"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="Auto" Margin="20,0,20,0" Width="Auto">
+            <materialDesign:Card Grid.Column="3" Grid.RowSpan="6" Background="WhiteSmoke"
+               materialDesign:ShadowAssist.ShadowDepth="Depth5"
+                materialDesign:ShadowAssist.ShadowEdges="Left"
+              Padding="32"
+                 RenderTransformOrigin="0.5,0.5" >
+                <materialDesign:Card.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.13"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </materialDesign:Card.RenderTransform>
+            </materialDesign:Card>
+
+            <Image Source="/images/logo.png" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Separator Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Background="#80CBC4" Foreground="#80CBC4" Height="5" Margin="0,0,0,10">
+                <Separator.RenderTransform>
+                    <ScaleTransform ScaleY="2" />
+                </Separator.RenderTransform>
+            </Separator>
+
+
+            <Button 
+                 Style="{StaticResource MaterialDesignFlatLightButton}"                      
+                  Grid.Column="3" Click="CloseApp" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="Auto" Width="Auto">
                 <materialDesign:PackIcon  Kind="Close" />
             </Button>
 
             <!-- navbar -->
-            <Grid x:Name="navbar" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid  x:Name="navbar" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
+                    <ColumnDefinition />
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button   Style="{StaticResource MaterialDesignFlatLightButton}"
-                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
-                          Grid.Column="0" Margin="0,10,5,10" Content="{DynamicResource Show All}"></Button>
+                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" 
+                          Grid.Column="0" Margin="0,0,5,10" Content="{DynamicResource Show All}" Height="Auto"/>
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}"
-                        Grid.Column="1" Margin="5"  Content="{DynamicResource Necklaces}"></Button>
+                        Grid.Column="1" Margin="5,0,5,10"  Content="{DynamicResource Necklaces}" Height="Auto"/>
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}"
-                       Grid.Column="2" Margin="5"  Content="{DynamicResource Rings}" ></Button>
+                       Grid.Column="2" Margin="5,0,5,10"  Content="{DynamicResource Rings}" Height="Auto" />
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}"
-                        Grid.Column="3" Margin="5"  Content="{DynamicResource Earrings}"></Button>
+                        Grid.Column="3" Margin="5,0,5,10"  Content="{DynamicResource Earrings}" Height="Auto"/>
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}"
-                         Grid.Column="4" Margin="5"  Content="{DynamicResource Wristwear}"></Button>
+                         Grid.Column="4" Margin="5,0,5,10"  Content="{DynamicResource Wristwear}" Height="Auto"/>
 
-                <Separator Grid.ColumnSpan="5" VerticalAlignment="Bottom" Foreground="Beige"/>
+                <Separator Grid.ColumnSpan="5"   VerticalAlignment="Bottom" Foreground="#80CBC4" Background="#80CBC4" Margin="0,0,0,9">
+                    <Separator.RenderTransform>
+                        <ScaleTransform ScaleY="2" />
+                    </Separator.RenderTransform>
+                </Separator>
             </Grid>
-
-
 
         </Grid>
 

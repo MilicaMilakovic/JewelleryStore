@@ -36,7 +36,7 @@ ENGINE = InnoDB;
 -- Table `store_db`.`RACUN`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `store_db`.`RACUN` (
-  `idRacuna` INT NOT NULL,
+  `idRacuna` INT NOT NULL AUTO_INCREMENT,
   `DatumIzdavanja` DATETIME NOT NULL,
   `CijenaUkupno` DECIMAL(7,2) NOT NULL,
   `ZAPOSLENI_idZaposlenog` INT NOT NULL,
@@ -54,7 +54,7 @@ ENGINE = InnoDB;
 -- Table `store_db`.`TIP_PROIZVODA`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `store_db`.`TIP_PROIZVODA` (
-  `idTipaProizvoda` INT NOT NULL,
+  `idTipaProizvoda` INT NOT NULL AUTO_INCREMENT,
   `Tip` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idTipaProizvoda`))
 ENGINE = InnoDB;
@@ -64,7 +64,7 @@ ENGINE = InnoDB;
 -- Table `store_db`.`PROIZVOD`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `store_db`.`PROIZVOD` (
-  `SifraProizvoda` INT NOT NULL,
+  `SifraProizvoda` INT NOT NULL AUTO_INCREMENT,
   `Naziv` VARCHAR(45) NOT NULL,
   `Cijena` DECIMAL(6,2) NOT NULL,
   `Kolicina` INT NOT NULL,
