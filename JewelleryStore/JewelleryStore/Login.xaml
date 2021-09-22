@@ -11,7 +11,7 @@
         
     <Grid>
         <Canvas>
-            <TextBox x:Name="username" Width="170" Height="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Canvas.Left="201" Canvas.Top="93" ></TextBox>
+        <!-- -->    <TextBox x:Name="username" Width="170" Height="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Canvas.Left="201" Canvas.Top="93" ></TextBox>
             <PasswordBox x:Name="password" Width="170" Height="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Canvas.Left="201" Canvas.Top="161"></PasswordBox>
             <Button x:Name="loginBtn" Click="LogIn" Width="170" Height="36" Foreground="Black" FontWeight="Bold" Canvas.Left="201" Canvas.Top="224">Login</Button>
         </Canvas>

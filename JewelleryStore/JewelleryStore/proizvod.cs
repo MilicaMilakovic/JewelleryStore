@@ -27,6 +27,9 @@ namespace JewelleryStore
 
         public int Kolicina { get; set; }
 
+        [StringLength(150)]
+        public string Slika { get; set; }
+
         [StringLength(45)]
         public string Opis { get; set; }
 

@@ -24,5 +24,10 @@ namespace JewelleryStore
         {
             InitializeComponent();
         }
+
+        private void CloseApp(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
