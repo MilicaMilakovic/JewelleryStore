@@ -73,5 +73,78 @@ namespace JewelleryStore
 
             }
         }
+
+        private void ShowFilter(int typeId)
+        {
+
+            StoreDb db = new StoreDb();
+            products.Children.Clear();
+            foreach (proizvod p in db.proizvods)
+            {
+                if (p.tipProizvoda == typeId)
+                {
+
+                    StackPanel stackPanel = new StackPanel();
+                    stackPanel.Orientation = Orientation.Vertical;
+                    stackPanel.Height = 200;
+                    stackPanel.Width = 155;
+                    stackPanel.Background = Brushes.Transparent;
+                    stackPanel.Margin = new Thickness(8);
+
+                    Image image = new Image();
+
+                    image.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + p.Slika));
+                    image.Height = 150;
+                    image.Width = 150;
+                    image.Stretch = Stretch.UniformToFill;
+                    image.Margin = new Thickness(3);
+
+                    Label name = new Label();
+                    name.HorizontalAlignment = HorizontalAlignment.Center;
+                    name.Content = p.Naziv;
+                    name.FontWeight = FontWeights.DemiBold;
+                    name.FontSize = 11;
+
+
+                    Label price = new Label();
+                    price.HorizontalAlignment = HorizontalAlignment.Center;
+                    price.Content = "BAM " + p.Cijena;
+                    price.FontSize = 11;
+
+                    stackPanel.Children.Add(image);
+                    stackPanel.Children.Add(name);
+                    stackPanel.Children.Add(price);
+
+                    products.Children.Add(stackPanel);
+                }
+
+            }
+
+        }
+
+        private void ShowNecklaces(object sender, RoutedEventArgs e)
+        {
+            ShowFilter(1);
+        }
+
+        private void ShowRings(object sender, RoutedEventArgs e)
+        {
+            ShowFilter(2);
+        }
+
+        private void ShowAll(object sender, RoutedEventArgs e)
+        {
+            ShowAll();
+        }
+
+        private void ShowEarrings(object sender, RoutedEventArgs e)
+        {
+            ShowFilter(3);
+        }
+
+        private void ShowWristwear(object sender, RoutedEventArgs e)
+        {
+            ShowFilter(4);
+        }
     }
 }
