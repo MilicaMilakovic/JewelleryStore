@@ -21,6 +21,7 @@ namespace JewelleryStore
     public partial class MainWindow : Window
     {
         private StoreDb db = new StoreDb();
+        private List<proizvod> selectedItems = new List<proizvod>();
 
         public MainWindow()
         {
@@ -72,6 +73,7 @@ namespace JewelleryStore
                 products.Children.Add(btn);
 
             }
+            refreshSelection();
         }
 
         private void ShowFilter(int typeId)
@@ -118,6 +120,7 @@ namespace JewelleryStore
                 }
 
             }
+            refreshSelection();
 
         }
 
@@ -152,11 +155,41 @@ namespace JewelleryStore
             string btn = (sender as Button).Name.ToString();
             int id =Int32.Parse(btn.Remove(0, 3));
 
-            var bc = new BrushConverter();
-            (sender as Button).Background = (Brush)bc.ConvertFrom("#D6ECE6");
             var product = db.proizvods.First(o => o.SifraProizvoda == id);
-            
+
+            if (selectedItems.Contains(product))
+            {
+                (sender as Button).Background = Brushes.Transparent;
+                selectedItems.Remove(product);
+            }
+            else
+            {
+                var bc = new BrushConverter();
+                (sender as Button).Background = (Brush)bc.ConvertFrom("#D6ECE6");
+                selectedItems.Add(product);
+            }
             Console.WriteLine(product.Naziv);
+        }
+
+
+        private void refreshSelection()
+        {
+            var bc = new BrushConverter();
+            if(selectedItems.Count > 0)
+            {
+                foreach (proizvod p in selectedItems)
+                {
+                    foreach (var e in products.Children.OfType<Button>())
+                    {
+                        if (e.Name == "btn" + p.SifraProizvoda)
+                        {
+                            e.Background = (Brush)bc.ConvertFrom("#D6ECE6");
+                        }
+                    }
+
+                }
+            }
+          
         }
     }
 }
