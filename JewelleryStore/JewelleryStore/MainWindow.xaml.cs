@@ -38,21 +38,14 @@ namespace JewelleryStore
             foreach (proizvod p in db.proizvods)
             {
                
-                StackPanel stackPanel = new StackPanel();
-                stackPanel.Orientation = Orientation.Vertical;
-                stackPanel.Height = 200;
-                stackPanel.Width = 155;
-                stackPanel.Background = Brushes.Transparent;
-                stackPanel.Margin = new Thickness(8);
+                StackPanel stackPanel = new StackPanel();               
+                stackPanel.Style = (Style)Resources["StackPanelStyle"];
 
                 Image image = new Image();
                 
-                image.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + p.Slika));
-                image.Height = 150;
-                image.Width = 150;
-                image.Stretch = Stretch.UniformToFill;
-                image.Margin = new Thickness(3);
-
+                image.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + p.Slika));              
+                image.Style = (Style)Resources["ImageStyle"];
+               
                 Label name = new Label();
                 name.HorizontalAlignment = HorizontalAlignment.Center;
                 name.Content = p.Naziv;
@@ -84,20 +77,13 @@ namespace JewelleryStore
                 if (p.tipProizvoda == typeId)
                 {
 
-                    StackPanel stackPanel = new StackPanel();
-                    stackPanel.Orientation = Orientation.Vertical;
-                    stackPanel.Height = 200;
-                    stackPanel.Width = 155;
-                    stackPanel.Background = Brushes.Transparent;
-                    stackPanel.Margin = new Thickness(8);
+                    StackPanel stackPanel = new StackPanel();                  
+                    stackPanel.Style = (Style)Resources["StackPanelStyle"];
 
                     Image image = new Image();
 
-                    image.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + p.Slika));
-                    image.Height = 150;
-                    image.Width = 150;
-                    image.Stretch = Stretch.UniformToFill;
-                    image.Margin = new Thickness(3);
+                    image.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + p.Slika));   
+                    image.Style = Resources["ImageStyle"] as Style;
 
                     Label name = new Label();
                     name.HorizontalAlignment = HorizontalAlignment.Center;
@@ -111,6 +97,7 @@ namespace JewelleryStore
                     price.Content = "BAM " + p.Cijena;
                     price.FontSize = 11;
 
+                   
                     stackPanel.Children.Add(image);
                     stackPanel.Children.Add(name);
                     stackPanel.Children.Add(price);

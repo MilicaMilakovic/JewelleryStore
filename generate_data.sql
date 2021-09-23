@@ -21,3 +21,16 @@ INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipP
 INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Rainbow Ring', '68.70', '125', 'Rainbowringtset.jpg', '2');
 INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Unfold Heart Signet Ring ', '68.90', '125', 'UnfoldHeartsignetringivory.jpg', '2');
 
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Heartseeker Hoop Earrings', '81.26', '125', 'Heartseekerhoopearrings.jpg', '3');
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Star Taupe Hoop Earrings', '81.30', '125', 'StarTaupeHoopEarrings.jpg', '3');
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Sunlit Drop Earrings', '83.34', '125', 'SunlitDropEarrings.jpg', '3');
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Sun Peach Huggie Earrings', '84.27', '125', 'SunPeachHuggieEarrings.jpg', '3');
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Sunseeker Gold Earrings', '81.26', '125', 'SunseekerGoldEarrings.jpg', '3');
+
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Crescent Key Bracelet', '73.50', '125', 'CrescentKeyBracelet.jpg', '4');
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Out of This World Bracelet', '75.25', '125', 'OutofThisWorldBracelet.jpg', '4');
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Star Ivory Bracelet', '75.25', '125', 'StarIvoryBracelet.jpg', '4');
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Starlit Bracelet', '73.81', '125', 'StarlitBracelet.jpg', '4');
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Star Navy Bracelet', '73.91', '125', 'StarNavyBracelet.jpg', '4');
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Sunseeker Bracelet', '74.91', '125', 'SunseekerBracelet.jpg', '4');
+

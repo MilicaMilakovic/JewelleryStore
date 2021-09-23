@@ -13,7 +13,41 @@
         WindowStyle="None"
         Background="Transparent">
 
-    <Border Background="WhiteSmoke" CornerRadius="10">
+    <Window.Resources>
+        <Style x:Name="StackPanelStyle" x:Key="StackPanelStyle" TargetType="{x:Type StackPanel}">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="Height" Value="210"/>
+            <Setter Property="Width" Value="165"/>
+            <Setter Property="Margin" Value="3"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#E2EEED"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#80CBC4"/>
+                </Trigger>
+                
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Name="ImageStyle" x:Key="ImageStyle" TargetType="{x:Type Image}">
+            <Setter Property="Stretch" Value="UniformToFill"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="150"/>
+            <Setter Property="Margin" Value="3"/>
+            <Style.Triggers>
+                <Trigger Property="Image.IsMouseOver" Value="True">
+                    <Setter Property="Stretch" Value="Fill" />
+                    <Setter Property="Height" Value="151"/>
+                    <Setter Property="Width" Value="151"/>
+                </Trigger>                
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    
+    <Border Background="White" CornerRadius="10">
 
         <Grid ShowGridLines="False">
 
@@ -30,8 +64,8 @@
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="44"/>
-                <RowDefinition Height="52"/>
+                <RowDefinition Height="51"/>
+                <RowDefinition Height="45"/>
                 <RowDefinition Height="18" />
                 <RowDefinition Height="90" />
                 <RowDefinition />
@@ -39,9 +73,9 @@
             </Grid.RowDefinitions>
 
             <materialDesign:Card Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-            materialDesign:ShadowAssist.ShadowDepth="Depth3"
-             materialDesign:ShadowAssist.ShadowEdges="Bottom,Right"
-             Background="WhiteSmoke"
+            materialDesign:ShadowAssist.ShadowDepth="Depth1"
+             
+             Background="White"
             Padding="32"
                  />
 
@@ -51,7 +85,7 @@
 
 
 
-            <ScrollViewer  Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="2">
+            <ScrollViewer Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="2">
                 <WrapPanel  x:Name="products" >
 
                 </WrapPanel>
@@ -74,7 +108,7 @@
             </materialDesign:Card>
 
             <Image Source="/images/logo.png" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,10,5"/>
-            <Separator Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Background="#80CBC4" Foreground="#80CBC4" Height="5" Margin="0,0,0,10">
+            <Separator Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" Background="#80CBC4" Foreground="#80CBC4" Height="5" Margin="419,0,1,1" Grid.ColumnSpan="2">
                 <Separator.RenderTransform>
                     <ScaleTransform ScaleY="2" />
                 </Separator.RenderTransform>
@@ -82,7 +116,7 @@
 
 
             <Button 
-                 Style="{StaticResource MaterialDesignFlatLightButton}"  
+                Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}" 
                   materialDesign:ShadowAssist.ShadowDepth="Depth3"
                   Grid.Column="3" Click="CloseApp" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="Auto" Width="Auto">
                 <materialDesign:PackIcon  Kind="Close" />
@@ -99,17 +133,17 @@
                 </Grid.ColumnDefinitions>
                 <Button   Style="{StaticResource MaterialDesignFlatLightButton}" Click="ShowAll"
                          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" 
-                          Grid.Column="0" Margin="0,0,5,10" Content="{DynamicResource Show All}" Height="Auto"/>
+                          Grid.Column="0"  Content="{DynamicResource Show All}" Height="Auto"/>
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}" Click="ShowNecklaces"
-                        Grid.Column="1" Margin="5,0,5,10"  Content="{DynamicResource Necklaces}" Height="Auto"/>
+                        Grid.Column="1"   Content="{DynamicResource Necklaces}" Height="Auto"/>
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}"
-                       Grid.Column="2" Margin="5,0,5,10"  Content="{DynamicResource Rings}" Click="ShowRings" Height="Auto" />
+                       Grid.Column="2"   Content="{DynamicResource Rings}" Click="ShowRings" Height="Auto" />
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}" Click="ShowEarrings"
-                        Grid.Column="3" Margin="5,0,5,10"  Content="{DynamicResource Earrings}" Height="Auto"/>
+                        Grid.Column="3"  Content="{DynamicResource Earrings}" Height="Auto"/>
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}" Click="ShowWristwear"
-                         Grid.Column="4" Margin="5,0,5,10"  Content="{DynamicResource Wristwear}" Height="Auto"/>
+                         Grid.Column="4"   Content="{DynamicResource Wristwear}" Height="Auto"/>
 
-                <Separator Grid.ColumnSpan="5"   VerticalAlignment="Bottom" Foreground="#F8E2E7" Background="#F8E2E7" Margin="0,0,0,9">
+                <Separator Grid.ColumnSpan="5"   VerticalAlignment="Bottom" Foreground="#F8E2E7" Background="#F8E2E7" Margin="-1,0,1,3">
                     <Separator.RenderTransform>
                         <ScaleTransform ScaleY="4" />
                     </Separator.RenderTransform>
@@ -121,7 +155,7 @@
             <Button Grid.Column="1" Grid.Row="5"
                 Style="{StaticResource MaterialDesignOutlinedLightButton}"
                 Content="DALJE"
-                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="45,16,105,16" />
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="45,16,105,16" Height="Auto" />
 
 
         </Grid>
