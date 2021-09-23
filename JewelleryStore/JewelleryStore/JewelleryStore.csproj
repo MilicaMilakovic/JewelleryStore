@@ -142,9 +142,33 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\WaterElementGoldNecklace.jpg" />
     <Resource Include="images\1.jpg" />
     <Resource Include="images\logo.png" />
     <Resource Include="images\mainPhoto.jpg" />
+    <Resource Include="images\AirElementGoldNecklace.jpg" />
+    <Resource Include="images\CrescentKeyBracelet.jpg" />
+    <Resource Include="images\EarthElementGoldNecklace.jpg" />
+    <Resource Include="images\FireElementGoldNecklace.jpg" />
+    <Resource Include="images\Heartseekerhoopearrings.jpg" />
+    <Resource Include="images\HonorHeartMantraRing.jpg" />
+    <Resource Include="images\MoonphaseIvoryGoldRing.jpg" />
+    <Resource Include="images\MoonphaseMauveGoldRing.jpg" />
+    <Resource Include="images\OutofThisWorldBracelet.jpg" />
+    <Resource Include="images\PresenceRing.jpg" />
+    <Resource Include="images\Rainbowringtset.jpg" />
+    <Resource Include="images\StarIvoryBracelet.jpg" />
+    <Resource Include="images\StarlitBracelet.jpg" />
+    <Resource Include="images\StarNavyBracelet.jpg" />
+    <Resource Include="images\StarTaupeHoopEarrings.jpg" />
+    <Resource Include="images\SunlitDropEarrings.jpg" />
+    <Resource Include="images\SunPeachHuggieEarrings.jpg" />
+    <Resource Include="images\SunseekerBracelet.jpg" />
+    <Resource Include="images\SunseekerGoldEarrings.jpg" />
+    <Resource Include="images\TodayNecklace.jpg" />
+    <Resource Include="images\UnfoldHeartsignetringivory.jpg" />
+    <Resource Include="images\UnfoldwhiteEarrings.jpg" />
+    <Resource Include="images\UniverseNecklace.jpg" />
     <Content Include="images\video.mp4" />
   </ItemGroup>
   <ItemGroup />

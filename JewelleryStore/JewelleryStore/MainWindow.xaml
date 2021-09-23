@@ -21,11 +21,11 @@
                 <!-- Left panel-->
                 <ColumnDefinition Width="80"/>
                 <!--Main panel-->
-                <ColumnDefinition Width="223*" />
+                <ColumnDefinition Width="153*" />
                 <!--Slideshow panel-->
-                <ColumnDefinition Width="209*"/>
+                <ColumnDefinition Width="137*"/>
                 <!--Right panel-->
-                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="74"/>
 
             </Grid.ColumnDefinitions>
 
@@ -38,9 +38,16 @@
                 <RowDefinition Height="64" />
             </Grid.RowDefinitions>
 
+            <materialDesign:Card Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+            materialDesign:ShadowAssist.ShadowDepth="Depth3"
+             materialDesign:ShadowAssist.ShadowEdges="Bottom,Right"
+             Background="WhiteSmoke"
+            Padding="32"
+                 />
+
             <Image Source="/images/mainPhoto.jpg" Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" Stretch="UniformToFill" />
 
-
+            <!--
             <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="3" Background="WhiteSmoke" Margin="0,10,0,0">
 
                 <Grid.ColumnDefinitions>
@@ -63,13 +70,39 @@
                     <TextBlock  FontWeight="DemiBold" Text="80KM" Canvas.Left="62" Canvas.Top="139"/>
                 </Canvas>
             </Grid>
+            -->
+
+            <ScrollViewer  Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <WrapPanel  x:Name="products" >
+                    <!--
+                    <StackPanel Margin="8" Orientation="Vertical" Height="200" Width="160" Background="Transparent">
+                        <Image Source="/images/1.jpg" Height="150" Width="150" Margin="3" Stretch="UniformToFill"></Image>
+                        <Label Foreground="Black" HorizontalAlignment="Center" FontWeight="DemiBold">Ime</Label>
+                        <Label HorizontalAlignment="Center" FontSize="10" >Cijena</Label>
+                    </StackPanel>
+              
+                <Button Width="150" Height="150"  Margin="8"></Button>
+                <Button Width="150" Height="150" Margin="8" ></Button>
+                <Button Width="150" Height="150" Margin="8" ></Button>
+                <Button Width="150" Height="150" Margin="8"  ></Button>
+                <Button Width="150" Height="150" Margin="8" ></Button>
+                <Button Width="150" Height="150" Margin="8"  ></Button>
+                <Button Width="150" Height="150" Margin="8" ></Button>
+                <Button Width="150" Height="150" Margin="8" ></Button>
+                <Button Width="150" Height="150" Margin="8" ></Button>
+                <Button Width="150" Height="150" Margin="8" ></Button>
+                <Button Width="150" Height="150" Margin="8" ></Button>
+                
+                -->
+                </WrapPanel>
+            </ScrollViewer>
 
 
             <materialDesign:Card Grid.Column="3" Grid.RowSpan="6" Background="WhiteSmoke"
-               materialDesign:ShadowAssist.ShadowDepth="Depth5"
+               materialDesign:ShadowAssist.ShadowDepth="Depth2"
                 materialDesign:ShadowAssist.ShadowEdges="Left"
               Padding="32"
-                 RenderTransformOrigin="0.5,0.5" >
+                 RenderTransformOrigin="0.5,0.5" Margin="1,0,0,0" >
                 <materialDesign:Card.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -80,7 +113,7 @@
                 </materialDesign:Card.RenderTransform>
             </materialDesign:Card>
 
-            <Image Source="/images/logo.png" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Image Source="/images/logo.png" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,10,5"/>
             <Separator Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Background="#80CBC4" Foreground="#80CBC4" Height="5" Margin="0,0,0,10">
                 <Separator.RenderTransform>
                     <ScaleTransform ScaleY="2" />
@@ -89,7 +122,8 @@
 
 
             <Button 
-                 Style="{StaticResource MaterialDesignFlatLightButton}"                      
+                 Style="{StaticResource MaterialDesignFlatLightButton}"  
+                  materialDesign:ShadowAssist.ShadowDepth="Depth3"
                   Grid.Column="3" Click="CloseApp" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="Auto" Width="Auto">
                 <materialDesign:PackIcon  Kind="Close" />
             </Button>
