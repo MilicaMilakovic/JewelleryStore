@@ -20,6 +20,8 @@ namespace JewelleryStore
     /// </summary>
     public partial class MainWindow : Window
     {
+        private StoreDb db = new StoreDb();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,11 +35,13 @@ namespace JewelleryStore
 
         private void ShowAll()
         {
-            StoreDb db = new StoreDb();
+           // StoreDb db = new StoreDb();
             products.Children.Clear();
             foreach (proizvod p in db.proizvods)
             {
-               
+                Button btn = new Button();
+                btn.Style = (Style)Resources["ButtonStyle"];
+
                 StackPanel stackPanel = new StackPanel();               
                 stackPanel.Style = (Style)Resources["StackPanelStyle"];
 
@@ -62,7 +66,10 @@ namespace JewelleryStore
                 stackPanel.Children.Add(name);
                 stackPanel.Children.Add(price);
 
-                products.Children.Add(stackPanel);
+                btn.Content = stackPanel;
+                btn.Name = "btn" + p.SifraProizvoda.ToString();
+                btn.Click += new RoutedEventHandler(selectItem);
+                products.Children.Add(btn);
 
             }
         }
@@ -70,12 +77,14 @@ namespace JewelleryStore
         private void ShowFilter(int typeId)
         {
 
-            StoreDb db = new StoreDb();
+           // StoreDb db = new StoreDb();
             products.Children.Clear();
             foreach (proizvod p in db.proizvods)
             {
                 if (p.tipProizvoda == typeId)
                 {
+                    Button btn = new Button();
+                    btn.Style = (Style)Resources["ButtonStyle"];
 
                     StackPanel stackPanel = new StackPanel();                  
                     stackPanel.Style = (Style)Resources["StackPanelStyle"];
@@ -102,13 +111,17 @@ namespace JewelleryStore
                     stackPanel.Children.Add(name);
                     stackPanel.Children.Add(price);
 
-                    products.Children.Add(stackPanel);
+                    btn.Content = stackPanel;
+                    btn.Name = "btn"+p.SifraProizvoda.ToString();
+                    btn.Click += new RoutedEventHandler(selectItem);
+                    products.Children.Add(btn);
                 }
 
             }
 
         }
 
+        
         private void ShowNecklaces(object sender, RoutedEventArgs e)
         {
             ShowFilter(1);
@@ -132,6 +145,18 @@ namespace JewelleryStore
         private void ShowWristwear(object sender, RoutedEventArgs e)
         {
             ShowFilter(4);
+        }
+
+        private void selectItem(object sender, RoutedEventArgs e)
+        {
+            string btn = (sender as Button).Name.ToString();
+            int id =Int32.Parse(btn.Remove(0, 3));
+
+            var bc = new BrushConverter();
+            (sender as Button).Background = (Brush)bc.ConvertFrom("#D6ECE6");
+            var product = db.proizvods.First(o => o.SifraProizvoda == id);
+            
+            Console.WriteLine(product.Naziv);
         }
     }
 }
