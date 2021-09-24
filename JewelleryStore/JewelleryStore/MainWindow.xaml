@@ -182,10 +182,11 @@
 
 
 
-            <Button Grid.Column="1" Grid.Row="5"
+            <Button x:Name="nextBtn" IsEnabled="False" Click="NextPage" Grid.Column="1" Grid.Row="5"
                 Style="{StaticResource MaterialDesignOutlinedLightButton}"
-                Content="DALJE"
-                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="45,16,105,16" Height="Auto" />
+                Content="{DynamicResource Next}"
+                FontWeight="Bold"
+                Margin="45,16,105,16" Height="Auto" />
 
 
         </Grid>

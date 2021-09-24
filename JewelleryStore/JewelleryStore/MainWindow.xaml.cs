@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
 
 namespace JewelleryStore
 {
@@ -27,6 +28,7 @@ namespace JewelleryStore
         {
             InitializeComponent();
             ShowAll();
+            //toggleBtnVisibility();
         }
 
         private void CloseApp(object sender, RoutedEventArgs e)
@@ -168,6 +170,9 @@ namespace JewelleryStore
                 (sender as Button).Background = (Brush)bc.ConvertFrom("#D6ECE6");
                 selectedItems.Add(product);
             }
+
+            if (selectedItems.Count > 0) nextBtn.IsEnabled = true;
+            else nextBtn.IsEnabled = false;
             Console.WriteLine(product.Naziv);
         }
 
@@ -186,10 +191,17 @@ namespace JewelleryStore
                             e.Background = (Brush)bc.ConvertFrom("#D6ECE6");
                         }
                     }
-
                 }
             }
           
         }
+
+        private void NextPage(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+      
     }
 }
