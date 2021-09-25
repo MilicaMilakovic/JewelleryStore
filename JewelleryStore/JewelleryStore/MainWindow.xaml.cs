@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
+using System.Collections.ObjectModel;
 
 namespace JewelleryStore
 {
@@ -21,14 +22,14 @@ namespace JewelleryStore
     /// </summary>
     public partial class MainWindow : Window
     {
-        private StoreDb db = new StoreDb();
+        private StoreDb db = new StoreDb();       
         private List<proizvod> selectedItems = new List<proizvod>();
+        
 
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
             ShowAll();
-            //toggleBtnVisibility();
         }
 
         private void CloseApp(object sender, RoutedEventArgs e)
@@ -198,7 +199,34 @@ namespace JewelleryStore
 
         private void NextPage(object sender, RoutedEventArgs e)
         {
+            navbar.Visibility = Visibility.Collapsed;
+            scrollBarViewer.Visibility = Visibility.Collapsed;
 
+            checkoutSV.Visibility = Visibility.Visible;
+
+            racun racun1 = new racun();
+            db.racuns.Add(racun1);
+
+
+            checkout.Children.Clear();
+            foreach(var p in selectedItems)
+            {
+                racun_stavka stavka = new racun_stavka()
+                {
+                    idRacuna = racun1.idRacuna,
+                    SifraProizvoda = p.SifraProizvoda,
+                    racun = racun1,
+                    proizvod = p,
+                    Kolicina = 1,
+                    Cijena = p.Cijena                   
+                };
+
+                checkout.Children.Add(new ProductCheckout(stavka) as UIElement);
+                           
+
+            }
+
+           
         }
 
 

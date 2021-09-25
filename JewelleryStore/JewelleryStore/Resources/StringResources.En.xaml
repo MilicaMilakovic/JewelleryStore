@@ -11,5 +11,7 @@
     <system:String x:Key="Username">Username</system:String>
     <system:String x:Key="Password">Password</system:String>
     <system:String x:Key="Next">NEXT</system:String>
+    <system:String x:Key="Language">Language</system:String>
+    <system:String x:Key="Total">Total</system:String>
     
 </ResourceDictionary>

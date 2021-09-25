@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JewelleryStore"
         mc:Ignorable="d"
-    Title="MainWindow" Height="650" Width="1024"
+    Title="MainWindow" Height="650" Width="1030"
         WindowStartupLocation="CenterScreen"
      
         ResizeMode="NoResize"
@@ -27,7 +27,7 @@
                 <Trigger Property="IsMouseCaptureWithin" Value="True">
                     <Setter Property="Background" Value="#80CBC4"/>
                 </Trigger>
-                
+
             </Style.Triggers>
         </Style>
 
@@ -41,7 +41,7 @@
                     <Setter Property="Stretch" Value="Fill" />
                     <Setter Property="Height" Value="152"/>
                     <Setter Property="Width" Value="152"/>
-                </Trigger>                
+                </Trigger>
             </Style.Triggers>
         </Style>
 
@@ -51,8 +51,8 @@
             <Setter Property="Margin" Value="3"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
-            
-            <Setter Property="Template">            
+
+            <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid Background="{TemplateBinding Background}">
@@ -73,10 +73,10 @@
                 </Trigger>
 
             </Style.Triggers>
-        </Style>        
+        </Style>
     </Window.Resources>
-    
-    
+
+
     <Border Background="White" CornerRadius="10">
 
         <Grid ShowGridLines="False">
@@ -85,11 +85,11 @@
                 <!-- Left panel-->
                 <ColumnDefinition Width="80"/>
                 <!--Main panel-->
-                <ColumnDefinition Width="153*" />
+                <ColumnDefinition Width="231*" />
                 <!--Slideshow panel-->
-                <ColumnDefinition Width="140*"/>
+                <ColumnDefinition Width="199*"/>
                 <!--Right panel-->
-                <ColumnDefinition Width="65"/>
+                <ColumnDefinition Width="90"/>
 
             </Grid.ColumnDefinitions>
 
@@ -110,17 +110,28 @@
                  />
 
 
+            <!-- Image -->
             <Image Source="/images/mainImage.jpg" Grid.Column="2" Grid.Row="0" 
                    Grid.RowSpan="6" Stretch="UniformToFill"  materialDesign:ShadowAssist.ShadowDepth="Depth3"/>
 
+            
+            <!-- Checkout panel -->
+            <ScrollViewer x:Name="checkoutSV" Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="2" Visibility="Hidden" >
+                <StackPanel x:Name="checkout" >
+                    
+                </StackPanel>                
+            </ScrollViewer>
 
-
-            <ScrollViewer Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="2">
+            <!-- Products panel -->
+            <ScrollViewer x:Name="scrollBarViewer" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="2">
                 <WrapPanel  x:Name="products" >
 
                 </WrapPanel>
             </ScrollViewer>
 
+
+
+            <!-- side navbar -->
 
             <materialDesign:Card Grid.Column="3" Grid.RowSpan="6" Background="#E2EEED"
                materialDesign:ShadowAssist.ShadowDepth="Depth2"
@@ -137,13 +148,27 @@
                 </materialDesign:Card.RenderTransform>
             </materialDesign:Card>
 
-            <Image Source="/images/logo.png" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,10,5"/>
-            <Separator Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" Background="#80CBC4" Foreground="#80CBC4" Height="5" Margin="419,0,1,1" Grid.ColumnSpan="2">
+            <ComboBox Grid.Row="1" Grid.Column="4" Cursor="Hand"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Center"
+                  Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                
+                  materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+                  materialDesign:ColorZoneAssist.Mode="SecondaryLight"
+                  materialDesign:HintAssist.Hint="{DynamicResource Language}"
+                  
+                >       
+                <ComboBoxItem
+                     Content="Srpski"  IsSelected="True"/>
+                <ComboBoxItem
+                     Content="English" />               
+            </ComboBox>
+
+            <Separator Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Background="#80CBC4" Foreground="#80CBC4" Height="5" Margin="1,0,1,1">
                 <Separator.RenderTransform>
                     <ScaleTransform ScaleY="2" />
                 </Separator.RenderTransform>
             </Separator>
-
 
             <Button 
                 Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}" 
@@ -152,7 +177,19 @@
                 <materialDesign:PackIcon  Kind="Close" />
             </Button>
 
+            <StackPanel Grid.Row="1" Grid.Column="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+            </StackPanel>
+
             <!-- navbar -->
+            <Image Source="/images/logo.png" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,10,5"/>
+
             <Grid  x:Name="navbar" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -189,6 +226,7 @@
                 Margin="45,16,105,16" Height="Auto" />
 
 
+            
         </Grid>
 
     </Border>

@@ -11,5 +11,6 @@
     <system:String x:Key="Username">Korisničko ime</system:String>
     <system:String x:Key="Password">Lozinka</system:String>
     <system:String x:Key="Next">DALJE</system:String>
-   
+    <system:String x:Key="Language">Jezik</system:String>
+    <system:String x:Key="Total">Ukupno</system:String>
 </ResourceDictionary>

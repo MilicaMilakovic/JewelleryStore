@@ -34,3 +34,5 @@ C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\bin\Debug\M
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\App.baml
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\Resources\StringResources.En.baml
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\Resources\StringResources.Srb.baml
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\ProductCheckout.g.cs
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\ProductCheckout.baml
