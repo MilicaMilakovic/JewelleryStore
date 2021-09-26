@@ -8,7 +8,7 @@
 
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="500">
-    <Grid Background="White" Margin="3,3,3,3" >
+    <Grid Background="White" Margin="3,3,3,3" materialDesign:ShadowAssist.ShadowDepth="Depth4" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="92*"/>
             <ColumnDefinition Width="111*"/>
@@ -32,7 +32,20 @@
         </Button>
         <Label x:Name="quantityLabel" Grid.Column="2" Content="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="54,29,53,35" Height="30"/>
         <Label x:Name="price" Grid.Column="3" Content="BAM Cijena" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="DemiBold" Height="29" Margin="2,33,0,32" Width="84" RenderTransformOrigin="0.542,0.833"/>
-        <Button x:Name="removeItem" Grid.Column="4" Content="x"  HorizontalAlignment="Center" Height="Auto" Margin="10,33,1,35" Width="26"/>
-        <Separator Grid.ColumnSpan="5" Grid.Row="0" Background="#F8E2E7" VerticalAlignment="Bottom"  materialDesign:ShadowAssist.ShadowDepth="Depth5" Height="1" Margin="0,0,0,2"/>
+        <Button x:Name="removeItem" 
+                Grid.Column="4"                
+                HorizontalAlignment="Center" 
+                Height="Auto" 
+                Margin="5,33,6,35" 
+                Width="26"
+                Style="{StaticResource MaterialDesignIconForegroundButton}"
+                Background="#E2EEED"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                 <materialDesign:PackIcon
+                 Kind="Close" />            
+        </Button>
+                
+              
+        <Separator Grid.ColumnSpan="5" Grid.Row="0" Background="#F8E2E7" VerticalAlignment="Bottom"  materialDesign:ShadowAssist.ShadowDepth="Depth5" Height="1" Margin="0"/>
     </Grid>
 </UserControl>

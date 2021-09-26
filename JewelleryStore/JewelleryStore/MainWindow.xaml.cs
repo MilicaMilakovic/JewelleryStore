@@ -24,11 +24,13 @@ namespace JewelleryStore
     {
         private StoreDb db = new StoreDb();       
         private List<proizvod> selectedItems = new List<proizvod>();
-        
+        public static zaposleni staff;
+        racun racun1;
 
         public MainWindow()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            user.Content = staff.Ime;
             ShowAll();
         }
 
@@ -204,7 +206,7 @@ namespace JewelleryStore
 
             checkoutSV.Visibility = Visibility.Visible;
 
-            racun racun1 = new racun();
+            racun1 = new racun();
             db.racuns.Add(racun1);
 
 
@@ -221,15 +223,53 @@ namespace JewelleryStore
                     Cijena = p.Cijena                   
                 };
 
-                checkout.Children.Add(new ProductCheckout(stavka) as UIElement);
-                           
+                racun1.racun_stavka.Add(stavka);
+                checkout.Children.Add(new ProductCheckout(stavka) as UIElement);                        
 
             }
 
-           
+            totalLabel.Visibility = Visibility.Visible;
+            priceLabel.Visibility = Visibility.Visible;
+            nextBtn.Visibility = Visibility.Collapsed;
+            finishBtn.Visibility = Visibility.Visible;
         }
 
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
+            checkoutSV.Visibility = Visibility.Collapsed;
+            scrollBarViewer.Visibility = Visibility.Visible;
+            backBtn.Visibility = Visibility.Collapsed;
+            nextBtn.Visibility = Visibility.Visible;
+            navbar.Visibility = Visibility.Visible;
+            totalLabel.Visibility = Visibility.Collapsed;
+            finishBtn.Visibility = Visibility.Collapsed;
+            finishBtn.IsEnabled = true;
+            priceLabel.Visibility = Visibility.Collapsed;
+            priceLabel.Content = ": ";
 
-      
+            selectedItems.Clear();           
+
+            ShowAll();
+          
+        }
+
+        private void Finish(object sender, RoutedEventArgs e)
+        {
+            backBtn.Visibility = Visibility.Visible;
+            finishBtn.IsEnabled = false;
+            decimal total = 0;
+            foreach (var stavka in racun1.racun_stavka)
+            {
+                Console.WriteLine(stavka.proizvod.Naziv + " " +stavka.Kolicina + " " + stavka.Cijena + " " +stavka.racun.idRacuna );
+                total += stavka.Cijena;
+            }
+
+            racun1.CijenaUkupno = total;
+            racun1.DatumIzdavanja = DateTime.Now;
+            racun1.ZAPOSLENI_idZaposlenog = staff.idZaposlenog;
+
+            db.SaveChanges();
+            priceLabel.Content = ": BAM " + total;
+        }
     }
 }

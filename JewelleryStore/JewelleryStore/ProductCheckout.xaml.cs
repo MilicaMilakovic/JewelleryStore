@@ -22,6 +22,7 @@ namespace JewelleryStore
     {
         racun_stavka item;
         proizvod product;
+        racun racun;
 
         StoreDb db = new StoreDb();
 
@@ -36,6 +37,8 @@ namespace JewelleryStore
 
             this.item = item;
             product = db.proizvods.First(o => o.SifraProizvoda == item.SifraProizvoda);
+           // racun = db.racuns.First(o => o.idRacuna == item.idRacuna);
+
             productPhoto.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + product.Slika));
             productName.Text = product.Naziv;
             quantityLabel.Content = item.Kolicina;
@@ -48,6 +51,7 @@ namespace JewelleryStore
             if (item.Kolicina > 0)
             {
                 item.Kolicina -= 1;
+                item.Cijena = item.Kolicina * product.Cijena;
                 quantityLabel.Content = item.Kolicina;
                 price.Content ="BAM "+ (item.Kolicina * product.Cijena).ToString();
             }
@@ -57,6 +61,7 @@ namespace JewelleryStore
         {
             item.Kolicina += 1;
             quantityLabel.Content = item.Kolicina;
+            item.Cijena = item.Kolicina * product.Cijena;
             price.Content = "BAM " + (item.Kolicina * product.Cijena).ToString();
         }
     }

@@ -13,5 +13,6 @@
     <system:String x:Key="Next">NEXT</system:String>
     <system:String x:Key="Language">Language</system:String>
     <system:String x:Key="Total">Total</system:String>
-    
+    <system:String x:Key="Back">Back</system:String>
+    <system:String x:Key="Finish">FINISH</system:String>
 </ResourceDictionary>

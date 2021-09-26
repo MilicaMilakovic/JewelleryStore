@@ -99,7 +99,7 @@
                 <RowDefinition Height="18" />
                 <RowDefinition Height="90" />
                 <RowDefinition />
-                <RowDefinition Height="64" />
+                <RowDefinition Height="77" />
             </Grid.RowDefinitions>
 
             <materialDesign:Card Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
@@ -114,13 +114,30 @@
             <Image Source="/images/mainImage.jpg" Grid.Column="2" Grid.Row="0" 
                    Grid.RowSpan="6" Stretch="UniformToFill"  materialDesign:ShadowAssist.ShadowDepth="Depth3"/>
 
-            
+
             <!-- Checkout panel -->
             <ScrollViewer x:Name="checkoutSV" Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="2" Visibility="Hidden" >
                 <StackPanel x:Name="checkout" >
-                    
-                </StackPanel>                
+
+                </StackPanel>
             </ScrollViewer>
+            <Label  x:Name="totalLabel" Content="{DynamicResource Total}" 
+                   Grid.Row="5" Grid.Column="1" FontSize="16"
+                   FontWeight="DemiBold" Margin="276,0,118,44" Visibility="Collapsed"/>
+            <Label x:Name="priceLabel" 
+                     Grid.Row="5" Grid.Column="1" FontSize="16"
+                   FontWeight="DemiBold" Margin="344,0,5,44" Visibility="Collapsed"/>
+            <Button x:Name="backBtn" Click="GoBack" Visibility="Collapsed" Grid.Column="0" Grid.Row="5"
+                Style="{StaticResource MaterialDesignFlatLightButton}"
+                FontWeight="Bold"
+                Height="Auto" Margin="0,27,0,0" >
+                <materialDesign:PackIcon Kind="ArrowBack"/>
+            </Button>
+
+            <Button x:Name="finishBtn" Click="Finish" Visibility="Collapsed"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}" 
+                    Grid.Column="1" Grid.Row="5" Margin="45,33,105,10"
+                    Content="{DynamicResource Finish}" Height="Auto"/>
 
             <!-- Products panel -->
             <ScrollViewer x:Name="scrollBarViewer" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="2">
@@ -148,7 +165,7 @@
                 </materialDesign:Card.RenderTransform>
             </materialDesign:Card>
 
-            <ComboBox Grid.Row="1" Grid.Column="4" Cursor="Hand"
+            <ComboBox Grid.Row="4" Grid.Column="3" Cursor="Hand" VerticalAlignment="Bottom"
                   HorizontalContentAlignment="Center"
                   VerticalContentAlignment="Center"
                   Style="{StaticResource MaterialDesignFloatingHintComboBox}"
@@ -157,14 +174,19 @@
                   materialDesign:ColorZoneAssist.Mode="SecondaryLight"
                   materialDesign:HintAssist.Hint="{DynamicResource Language}"
                   
-                >       
+                >
                 <ComboBoxItem
                      Content="Srpski"  IsSelected="True"/>
                 <ComboBoxItem
-                     Content="English" />               
+                     Content="English" />
             </ComboBox>
 
             <Separator Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Background="#80CBC4" Foreground="#80CBC4" Height="5" Margin="1,0,1,1">
+                <Separator.RenderTransform>
+                    <ScaleTransform ScaleY="2" />
+                </Separator.RenderTransform>
+            </Separator>
+            <Separator Grid.Column="3" Background="#80CBC4" Foreground="#80CBC4" Margin="0,47,2,44" Grid.RowSpan="2">
                 <Separator.RenderTransform>
                     <ScaleTransform ScaleY="2" />
                 </Separator.RenderTransform>
@@ -177,15 +199,16 @@
                 <materialDesign:PackIcon  Kind="Close" />
             </Button>
 
-            <StackPanel Grid.Row="1" Grid.Column="3">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
+            <materialDesign:Chip x:Name="user"
+                 Content="User"
+                 Grid.Row="1"
+                 Grid.Column="3" Margin="0,7,0,6" Width="90"               
+               >
 
-                </Grid>
-            </StackPanel>
+                <materialDesign:Chip.Icon>
+                    <materialDesign:PackIcon Kind="User"/>
+                </materialDesign:Chip.Icon>
+            </materialDesign:Chip>
 
             <!-- navbar -->
             <Image Source="/images/logo.png" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,10,5"/>
@@ -223,10 +246,10 @@
                 Style="{StaticResource MaterialDesignOutlinedLightButton}"
                 Content="{DynamicResource Next}"
                 FontWeight="Bold"
-                Margin="45,16,105,16" Height="Auto" />
+                Margin="45,38,105,8" Height="Auto" />
 
 
-            
+
         </Grid>
 
     </Border>

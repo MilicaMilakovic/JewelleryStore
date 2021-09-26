@@ -13,4 +13,6 @@
     <system:String x:Key="Next">DALJE</system:String>
     <system:String x:Key="Language">Jezik</system:String>
     <system:String x:Key="Total">Ukupno</system:String>
+    <system:String x:Key="Back">Nazad</system:String>
+    <system:String x:Key="Finish">ZAVRŠI</system:String>
 </ResourceDictionary>

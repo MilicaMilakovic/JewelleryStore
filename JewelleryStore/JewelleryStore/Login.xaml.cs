@@ -34,6 +34,7 @@ namespace JewelleryStore
             if (db.zaposlenis.Any(o => o.KorisnickoIme == u && o.Lozinka == p))
             {
                 Console.WriteLine("Uspjesna prijava!");
+                MainWindow.staff = db.zaposlenis.First(o => o.KorisnickoIme == u && o.Lozinka == p);
                 new MainWindow().Show();
                 this.Close();
             }
