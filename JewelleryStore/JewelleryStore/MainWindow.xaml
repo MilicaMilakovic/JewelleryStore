@@ -107,7 +107,7 @@
              
              Background="White"
             Padding="32"
-                 />
+            />
 
 
             <!-- Image -->
@@ -204,7 +204,6 @@
                  Grid.Row="1"
                  Grid.Column="3" Margin="0,7,0,6" Width="90"               
                >
-
                 <materialDesign:Chip.Icon>
                     <materialDesign:PackIcon Kind="User"/>
                 </materialDesign:Chip.Icon>

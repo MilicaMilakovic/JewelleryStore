@@ -15,4 +15,5 @@
     <system:String x:Key="Total">Total</system:String>
     <system:String x:Key="Back">Back</system:String>
     <system:String x:Key="Finish">FINISH</system:String>
+    <system:String x:Key="AdminLogin">Log in as administrator</system:String>
 </ResourceDictionary>

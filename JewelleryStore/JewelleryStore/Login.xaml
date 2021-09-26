@@ -8,12 +8,66 @@
         mc:Ignorable="d"
         Title="Login" Height="400" Width="600"
         WindowStartupLocation="CenterScreen">
-        
+
+    <Window.Resources>
+        <Style x:Key="AdminButton" TargetType="{x:Type Button}" >
+            <Setter Property="Foreground" Value="#2B2B2B"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Height" Value="27"/>
+            <Setter Property="Width" Value="166"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#80CBC4"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Canvas>
-        <!-- -->    <TextBox x:Name="username" Width="170" Height="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Canvas.Left="201" Canvas.Top="93" ></TextBox>
-            <PasswordBox x:Name="password" Width="170" Height="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Canvas.Left="201" Canvas.Top="161"></PasswordBox>
-            <Button x:Name="loginBtn" Click="LogIn" Width="170" Height="36" Foreground="Black" FontWeight="Bold" Canvas.Left="201" Canvas.Top="224">Login</Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="359*"/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.RowSpan="2">
+            <Image Source="/images/img.jpg" Height="406" Width="624" Canvas.Top="-12" Canvas.Left="-13"/>
+            <Rectangle Width="303" Height="369" 
+                       Fill="White"   
+                       materialDesign:ShadowAssist.ShadowDepth="Depth4" 
+                       materialDesign:ShadowAssist.ShadowEdges="Right"/>
+
+            <materialDesign:PackIcon Kind="AccountOutline" Canvas.Left="61" Canvas.Top="99" Height="25" Width="22"  />
+            <TextBox x:Name="username" materialDesign:HintAssist.Hint="{DynamicResource Username}" Width="154" Height="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Canvas.Left="88" Canvas.Top="94" />
+            <materialDesign:PackIcon Kind="Password" Canvas.Left="61" Canvas.Top="169" Height="25" Width="22"  />
+            <PasswordBox x:Name="password" materialDesign:HintAssist.Hint="{DynamicResource Password}" Width="154" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Canvas.Left="88" Canvas.Top="169"/>
+            <Button  
+                Style="{StaticResource MaterialDesignRaisedLightButton}"             
+                x:Name="loginBtn" Click="LogIn" Width="107" Height="30" 
+                Foreground="White" FontWeight="Bold" Canvas.Left="105" Canvas.Top="242" Content="{DynamicResource Login}"/>
+            <Image Source="/images/logo.png" Height="40" Width="283" Canvas.Left="10" Canvas.Top="10"/>
+
+            <Button Canvas.Left="98" Canvas.Top="329"
+                    Style="{StaticResource AdminButton}" 
+                    Content="{DynamicResource AdminLogin}"
+                   HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center" Height="20" Width="138"
+                    />
         </Canvas>
     </Grid>
 </Window>

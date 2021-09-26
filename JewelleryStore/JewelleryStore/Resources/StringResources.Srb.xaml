@@ -15,4 +15,5 @@
     <system:String x:Key="Total">Ukupno</system:String>
     <system:String x:Key="Back">Nazad</system:String>
     <system:String x:Key="Finish">ZAVRŠI</system:String>
+    <system:String x:Key="AdminLogin">Prijavi se kao administator</system:String>
 </ResourceDictionary>

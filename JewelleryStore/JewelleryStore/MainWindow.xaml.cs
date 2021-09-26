@@ -83,7 +83,6 @@ namespace JewelleryStore
 
         private void ShowFilter(int typeId)
         {
-
            // StoreDb db = new StoreDb();
             products.Children.Clear();
             foreach (proizvod p in db.proizvods)

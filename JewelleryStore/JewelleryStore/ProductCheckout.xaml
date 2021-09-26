@@ -33,6 +33,7 @@
         <Label x:Name="quantityLabel" Grid.Column="2" Content="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="54,29,53,35" Height="30"/>
         <Label x:Name="price" Grid.Column="3" Content="BAM Cijena" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="DemiBold" Height="29" Margin="2,33,0,32" Width="84" RenderTransformOrigin="0.542,0.833"/>
         <Button x:Name="removeItem" 
+                Click="RemoveItem"
                 Grid.Column="4"                
                 HorizontalAlignment="Center" 
                 Height="Auto" 

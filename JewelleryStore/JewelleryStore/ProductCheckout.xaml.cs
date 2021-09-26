@@ -64,5 +64,10 @@ namespace JewelleryStore
             item.Cijena = item.Kolicina * product.Cijena;
             price.Content = "BAM " + (item.Kolicina * product.Cijena).ToString();
         }
+
+        private void RemoveItem(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

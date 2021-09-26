@@ -180,6 +180,8 @@
   <ItemGroup>
     <Resource Include="images\mainImage.jpg" />
     <Resource Include="images\main.PNG" />
+    <Resource Include="images\LoginBackground.jpg" />
+    <Resource Include="images\img.jpg" />
     <Content Include="images\video.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
