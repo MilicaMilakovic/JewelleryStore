@@ -246,7 +246,8 @@ namespace JewelleryStore
             priceLabel.Visibility = Visibility.Collapsed;
             priceLabel.Content = ": ";
 
-            selectedItems.Clear();           
+            selectedItems.Clear();
+            nextBtn.IsEnabled = false;
 
             ShowAll();
           

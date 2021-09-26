@@ -1,5 +1,6 @@
 select * from zaposleni;
 INSERT INTO `store_db`.`zaposleni` (`Ime`, `Prezime`, `KorisnickoIme`, `Lozinka`, `ZaposlenOd`, `Plata`, `isAdmin`, `isActive`) VALUES ('Milica', 'Milakovic', 'milica', 'milica', '2021-09-22', '1000', '0', '1');
+INSERT INTO `store_db`.`zaposleni` (`Ime`, `Prezime`, `KorisnickoIme`, `Lozinka`, `ZaposlenOd`, `Plata`, `isAdmin`, `isActive`) VALUES ('Marko', 'Markovic', 'admin', 'admin', '2021-09-27', '1000', '1', '1');
 
 select * from tip_proizvoda;
 INSERT INTO `store_db`.`tip_proizvoda` (`Tip`) VALUES ('Necklace');
@@ -34,3 +35,6 @@ INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipP
 INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Star Navy Bracelet', '73.91', '125', 'StarNavyBracelet.jpg', '4');
 INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Sunseeker Bracelet', '74.91', '125', 'SunseekerBracelet.jpg', '4');
 
+select * from racun;
+select * from racun_stavka;
+select * from zaposleni;

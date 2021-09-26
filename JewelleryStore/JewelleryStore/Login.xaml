@@ -62,7 +62,8 @@
                 Foreground="White" FontWeight="Bold" Canvas.Left="105" Canvas.Top="242" Content="{DynamicResource Login}"/>
             <Image Source="/images/logo.png" Height="40" Width="283" Canvas.Left="10" Canvas.Top="10"/>
 
-            <Button Canvas.Left="98" Canvas.Top="329"
+            <Button Click="AdminLogin"
+                    Canvas.Left="98" Canvas.Top="329"
                     Style="{StaticResource AdminButton}" 
                     Content="{DynamicResource AdminLogin}"
                    HorizontalContentAlignment="Center"

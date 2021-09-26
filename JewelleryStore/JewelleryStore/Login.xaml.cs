@@ -42,5 +42,22 @@ namespace JewelleryStore
                 Console.WriteLine("Neuspjesna prijava!");
             
         }
+
+        private void AdminLogin(object sender, RoutedEventArgs e)
+        {
+            string u = username.Text;
+            string p = password.Password.ToString();
+
+            StoreDb db = new StoreDb();
+
+            if (db.zaposlenis.Any(o => o.KorisnickoIme == u && o.Lozinka == p && o.isAdmin == true))
+            {
+                Console.WriteLine("Uspjesna prijava!");
+                this.Close();
+
+            }
+            else
+                Console.WriteLine("Neuspjesna prijava...");
+        }
     }
 }
