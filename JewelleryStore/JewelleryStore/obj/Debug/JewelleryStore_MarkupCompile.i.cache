@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\App.xaml
-81570190631
-1110177320
-16879226185
-22-113296837
-AdminWindow.xaml;Login.xaml;MainWindow.xaml;ProductCheckout.xaml;ProductsPage.xaml;Resources\StringResources.En.xaml;Resources\StringResources.Srb.xaml;Resources\Styles.xaml;
+101399325636
 
-False
+181103039995
+22-113296837
+AdminWindow.xaml;Login.xaml;MainWindow.xaml;ProductCheckout.xaml;ProductsPage.xaml;Resources\StringResources.En.xaml;Resources\StringResources.Srb.xaml;Resources\Styles.xaml;StaffControl.xaml;StaffPage.xaml;
+
+True
 

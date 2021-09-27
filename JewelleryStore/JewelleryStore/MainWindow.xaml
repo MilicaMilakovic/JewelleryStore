@@ -77,7 +77,7 @@
     </Window.Resources>
 
 
-    <Border Background="White" CornerRadius="10">
+    <Border Background="White" >
 
         <Grid ShowGridLines="False">
 

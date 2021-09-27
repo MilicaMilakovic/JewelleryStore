@@ -23,4 +23,7 @@
     <system:String x:Key="Products">Proizvodi</system:String>
     <system:String x:Key="Staff">Zaposleni</system:String>
     <system:String x:Key="Statistics">Statistika</system:String>
+    <system:String x:Key="User">Zaposleni</system:String>
+    <system:String x:Key="Since">Zaposlen od</system:String>
+    <system:String x:Key="Pay">Plata</system:String>
 </ResourceDictionary>

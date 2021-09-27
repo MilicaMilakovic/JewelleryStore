@@ -25,7 +25,6 @@ C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\J
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\JewelleryStore.pdb
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\Login.g.cs
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\Login.baml
-C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\JewelleryStore_Content.g.cs
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\bin\Debug\MaterialDesignColors.dll
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\bin\Debug\MaterialDesignColors.pdb
@@ -41,3 +40,7 @@ C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\A
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\Resources\Styles.baml
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\ProductsPage.g.cs
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\ProductsPage.baml
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\StaffControl.g.cs
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\StaffPage.g.cs
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\StaffControl.baml
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\StaffPage.baml

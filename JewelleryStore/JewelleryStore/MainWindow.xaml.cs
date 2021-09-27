@@ -44,37 +44,40 @@ namespace JewelleryStore
             products.Children.Clear();
             foreach (proizvod p in db.proizvods)
             {
-                Button btn = new Button();
-                btn.Style = (Style)Resources["ButtonStyle"];
+                if (p.isActive == true)
+                {
+                    Button btn = new Button();
+                    btn.Style = (Style)Resources["ButtonStyle"];
 
-                StackPanel stackPanel = new StackPanel();               
-                stackPanel.Style = (Style)Resources["StackPanelStyle"];
+                    StackPanel stackPanel = new StackPanel();
+                    stackPanel.Style = (Style)Resources["StackPanelStyle"];
 
-                Image image = new Image();
-                
-                image.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + p.Slika));              
-                image.Style = (Style)Resources["ImageStyle"];
-               
-                Label name = new Label();
-                name.HorizontalAlignment = HorizontalAlignment.Center;
-                name.Content = p.Naziv;
-                name.FontWeight = FontWeights.DemiBold;
-                name.FontSize = 11;
-                
+                    Image image = new Image();
 
-                Label price = new Label();
-                price.HorizontalAlignment = HorizontalAlignment.Center;
-                price.Content = "BAM " + p.Cijena;
-                price.FontSize = 11;
+                    image.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + p.Slika));
+                    image.Style = (Style)Resources["ImageStyle"];
 
-                stackPanel.Children.Add(image);
-                stackPanel.Children.Add(name);
-                stackPanel.Children.Add(price);
+                    Label name = new Label();
+                    name.HorizontalAlignment = HorizontalAlignment.Center;
+                    name.Content = p.Naziv;
+                    name.FontWeight = FontWeights.DemiBold;
+                    name.FontSize = 11;
 
-                btn.Content = stackPanel;
-                btn.Name = "btn" + p.SifraProizvoda.ToString();
-                btn.Click += new RoutedEventHandler(selectItem);
-                products.Children.Add(btn);
+
+                    Label price = new Label();
+                    price.HorizontalAlignment = HorizontalAlignment.Center;
+                    price.Content = "BAM " + p.Cijena;
+                    price.FontSize = 11;
+
+                    stackPanel.Children.Add(image);
+                    stackPanel.Children.Add(name);
+                    stackPanel.Children.Add(price);
+
+                    btn.Content = stackPanel;
+                    btn.Name = "btn" + p.SifraProizvoda.ToString();
+                    btn.Click += new RoutedEventHandler(selectItem);
+                    products.Children.Add(btn);
+                }
 
             }
             refreshSelection();
@@ -85,7 +88,7 @@ namespace JewelleryStore
             products.Children.Clear();
             foreach (proizvod p in db.proizvods)
             {
-                if (p.tipProizvoda == typeId)
+                if (p.isActive == true && p.tipProizvoda == typeId)
                 {
                     Button btn = new Button();
                     btn.Style = (Style)Resources["ButtonStyle"];
@@ -120,10 +123,8 @@ namespace JewelleryStore
                     btn.Click += new RoutedEventHandler(selectItem);
                     products.Children.Add(btn);
                 }
-
             }
             refreshSelection();
-
         }
 
         

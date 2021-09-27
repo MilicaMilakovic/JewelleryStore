@@ -80,7 +80,7 @@
                VerticalAlignment="Center" Height="28"/>
        
          <!-- content -->
-        <Frame x:Name="myFrame" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="2">
+        <Frame x:Name="myFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="2">
             
         </Frame>
         
