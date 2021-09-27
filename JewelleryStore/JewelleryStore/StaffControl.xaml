@@ -13,23 +13,25 @@
             <ColumnDefinition Width="124*"/>
             <ColumnDefinition Width="118*"/>
             <ColumnDefinition Width="130*"/>
-            <ColumnDefinition Width="131*"/>
-            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="119*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="142*"/>
         </Grid.ColumnDefinitions>
 
-        <materialDesign:PackIcon Kind="UserCircleOutline" Height="56" Foreground="#80CBC4" Width="58" Margin="0,0,22,23" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
-        <Separator Background="#80CBC4" VerticalAlignment="Bottom" Grid.ColumnSpan="6"/>
+        <materialDesign:PackIcon Kind="UserCircleOutline" Height="50" Foreground="#80CBC4" Width="50" Margin="0,0,25,23" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+        <Separator Background="#80CBC4" VerticalAlignment="Bottom" Grid.ColumnSpan="7" Height="1" Margin="0,0,0,2"/>
 
         <TextBlock x:Name="nameLabel" Grid.Column="1"  Margin="7,39,6,30" />
         <Label x:Name="usernameLabel" Grid.Column="2"  Margin="7,39"/>
         <Label x:Name="sinceLabel" Grid.Column="3"  Margin="7,39"/>
         <Label x:Name="salaryLabel" Grid.Column="4"  Margin="7,39"/>
-        <Button  Content="{materialDesign:PackIcon Kind=Edit}"  Margin="10"       
+        <Button  Content="{materialDesign:PackIcon Kind=Edit}"  Margin="9.667,34,0,34"       
                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                 Grid.Column="5" Width="50" HorizontalAlignment="Left" />
-        <Button  Content="{materialDesign:PackIcon Kind=Remove}"  Margin="10"       
+                 Grid.Column="6" Width="50" HorizontalAlignment="Left" Height="Auto" />
+        <Button  Content="{materialDesign:PackIcon Kind=Remove}"  Margin="0,34,10,34" 
+                 Click="DeleteUser"
                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                 Grid.Column="5" Width="50" HorizontalAlignment="Right" />
+                 Grid.Column="6" Width="50" HorizontalAlignment="Right" Height="Auto" />
 
     </Grid>
 </UserControl>

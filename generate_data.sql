@@ -1,6 +1,7 @@
 select * from zaposleni;
 INSERT INTO `store_db`.`zaposleni` (`Ime`, `Prezime`, `KorisnickoIme`, `Lozinka`, `ZaposlenOd`, `Plata`, `isAdmin`, `isActive`) VALUES ('Milica', 'Milakovic', 'milica', 'milica', '2021-09-22', '1000', '0', '1');
 INSERT INTO `store_db`.`zaposleni` (`Ime`, `Prezime`, `KorisnickoIme`, `Lozinka`, `ZaposlenOd`, `Plata`, `isAdmin`, `isActive`) VALUES ('Marko', 'Markovic', 'admin', 'admin', '2021-09-27', '1000', '1', '1');
+INSERT INTO `store_db`.`zaposleni` (`Ime`, `Prezime`, `KorisnickoIme`, `Lozinka`, `ZaposlenOd`, `Plata`, `isAdmin`, `isActive`) VALUES ('Test', 'Test', 'test', 'test', '2021-09-27', '1000', '0', '1');
 
 select * from tip_proizvoda;
 INSERT INTO `store_db`.`tip_proizvoda` (`Tip`) VALUES ('Necklace');

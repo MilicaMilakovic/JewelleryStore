@@ -73,7 +73,6 @@
         <!-- logo -->
         <Image Source="/images/logo.png" Grid.Column="0" Margin ="10,0"  Grid.ColumnSpan="1" RenderTransformOrigin="0.507,0.544"/>
         <Label x:Name="pageLabel"
-               Content="{DynamicResource Products}" 
                Grid.Column="1" FontSize="15" 
                Margin="10,10,435,10"
                FontWeight="Bold" Foreground="#36BEB3"

@@ -40,6 +40,12 @@ namespace JewelleryStore
         
        }
 
-
+        private void DeleteUser(object sender, RoutedEventArgs e)
+        {
+            zaposleni zap = db.zaposlenis.First( o => o.idZaposlenog == user.idZaposlenog);
+            zap.isActive = false;
+            db.SaveChanges();
+            ((StackPanel)this.Parent).Children.Remove(this);
+        }
     }
 }
