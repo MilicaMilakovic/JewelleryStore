@@ -40,9 +40,6 @@ namespace JewelleryStore
 
             product = db.proizvods.First(o => o.SifraProizvoda == item.SifraProizvoda);
 
-            //Console.WriteLine("ITEM BILL: " + item.idRacuna );
-            //foreach (var rac in db.racuns) Console.WriteLine(rac.idRacuna+ " ,");
-
             productPhoto.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + product.Slika));
             productName.Text = product.Naziv;
             quantityLabel.Content = item.Kolicina;

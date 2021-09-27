@@ -36,3 +36,6 @@ C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\R
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\Resources\StringResources.Srb.baml
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\ProductCheckout.g.cs
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\ProductCheckout.baml
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\AdminWindow.g.cs
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\AdminWindow.baml
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\Resources\Styles.baml

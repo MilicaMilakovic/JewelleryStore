@@ -41,7 +41,6 @@ namespace JewelleryStore
 
         private void ShowAll()
         {
-           // StoreDb db = new StoreDb();
             products.Children.Clear();
             foreach (proizvod p in db.proizvods)
             {
@@ -83,7 +82,6 @@ namespace JewelleryStore
 
         private void ShowFilter(int typeId)
         {
-           // StoreDb db = new StoreDb();
             products.Children.Clear();
             foreach (proizvod p in db.proizvods)
             {
@@ -194,8 +192,7 @@ namespace JewelleryStore
                         }
                     }
                 }
-            }
-          
+            }          
         }
 
         private void NextPage(object sender, RoutedEventArgs e)
@@ -270,6 +267,7 @@ namespace JewelleryStore
 
             db.SaveChanges();
             priceLabel.Content = ": BAM " + total;
+
         }
     }
 }

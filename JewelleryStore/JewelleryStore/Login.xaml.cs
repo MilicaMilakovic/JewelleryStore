@@ -53,11 +53,21 @@ namespace JewelleryStore
             if (db.zaposlenis.Any(o => o.KorisnickoIme == u && o.Lozinka == p && o.isAdmin == true))
             {
                 Console.WriteLine("Uspjesna prijava!");
+                new AdminWindow().Show();
                 this.Close();
-
             }
             else
                 Console.WriteLine("Neuspjesna prijava...");
+        }
+
+        private void ToSerbian(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ToEnglish(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -16,4 +16,8 @@
     <system:String x:Key="Back">Back</system:String>
     <system:String x:Key="Finish">FINISH</system:String>
     <system:String x:Key="AdminLogin">Log in as administrator</system:String>
+    <system:String x:Key="Search">Search</system:String>
+    <system:String x:Key="Add">ADD</system:String>
+    <system:String x:Key="Edit">EDIT</system:String>
+    <system:String x:Key="Delete">DELETE</system:String>
 </ResourceDictionary>

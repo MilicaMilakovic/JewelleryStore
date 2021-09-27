@@ -16,4 +16,8 @@
     <system:String x:Key="Back">Nazad</system:String>
     <system:String x:Key="Finish">ZAVRŠI</system:String>
     <system:String x:Key="AdminLogin">Prijavi se kao administator</system:String>
+    <system:String x:Key="Search">Pretraga</system:String>
+    <system:String x:Key="Add">DODAJ</system:String>
+    <system:String x:Key="Edit">IZMIJENI</system:String>
+    <system:String x:Key="Delete">OBRIŠI</system:String>
 </ResourceDictionary>
