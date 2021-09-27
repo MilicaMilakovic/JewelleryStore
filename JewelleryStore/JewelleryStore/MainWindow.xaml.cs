@@ -222,8 +222,8 @@ namespace JewelleryStore
                     Cijena = p.Cijena                   
                 };
 
-                racun1.racun_stavka.Add(stavka);
-                checkout.Children.Add(new ProductCheckout(stavka) as UIElement);                        
+                racun1.racun_stavka.Add(stavka);                
+                checkout.Children.Add(new ProductCheckout(racun1, stavka) as UIElement);                        
 
             }
 

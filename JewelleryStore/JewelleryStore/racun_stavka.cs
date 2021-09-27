@@ -26,5 +26,6 @@ namespace JewelleryStore
         public virtual proizvod proizvod { get; set; }
 
         public virtual racun racun { get; set; }
+
     }
 }

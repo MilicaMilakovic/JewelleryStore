@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:JewelleryStore"
         mc:Ignorable="d"
         Title="Login" Height="400" Width="600"
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
@@ -32,6 +33,13 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#80CBC4"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                </Trigger>
+
+                <Trigger Property="IsMouseCaptured" Value="True">
                     <Setter Property="Foreground" Value="#80CBC4"/>
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="Background" Value="Transparent"/>
@@ -63,12 +71,21 @@
             <Image Source="/images/logo.png" Height="40" Width="283" Canvas.Left="10" Canvas.Top="10"/>
 
             <Button Click="AdminLogin"
-                    Canvas.Left="98" Canvas.Top="329"
+                    Canvas.Left="94" Canvas.Top="294"
                     Style="{StaticResource AdminButton}" 
                     Content="{DynamicResource AdminLogin}"
                    HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center" Height="20" Width="138"
                     />
+
+            <Button x:Name="SR" Content="SR"
+                    Style="{StaticResource AdminButton}" 
+                    IsDefault="True" 
+                    
+                    Canvas.Left="560" Canvas.Top="333" Width="24" Height="14"/>
+            <Button x:Name="EN" Content="EN" 
+                Style="{StaticResource AdminButton}" 
+                Canvas.Left="560" Canvas.Top="347" Width="24" Height="14"/>
         </Canvas>
     </Grid>
 </Window>

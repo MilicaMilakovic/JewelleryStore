@@ -31,13 +31,17 @@ namespace JewelleryStore
             InitializeComponent();
         }
 
-        public ProductCheckout(racun_stavka item)
+        public ProductCheckout(racun racun , racun_stavka item)
         {
             InitializeComponent();
 
             this.item = item;
+            this.racun = racun;
+
             product = db.proizvods.First(o => o.SifraProizvoda == item.SifraProizvoda);
-           // racun = db.racuns.First(o => o.idRacuna == item.idRacuna);
+
+            //Console.WriteLine("ITEM BILL: " + item.idRacuna );
+            //foreach (var rac in db.racuns) Console.WriteLine(rac.idRacuna+ " ,");
 
             productPhoto.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + product.Slika));
             productName.Text = product.Naziv;
@@ -67,7 +71,8 @@ namespace JewelleryStore
 
         private void RemoveItem(object sender, RoutedEventArgs e)
         {
-
+            racun.racun_stavka.Remove(item);
+            ((StackPanel)this.Parent).Children.Remove(this);
         }
     }
 }
