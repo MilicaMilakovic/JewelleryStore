@@ -62,12 +62,16 @@ namespace JewelleryStore
 
         private void ToSerbian(object sender, RoutedEventArgs e)
         {
-
+            ResourceDictionary resourceDictionary = new ResourceDictionary();
+            resourceDictionary.Source = new Uri("pack://application:,,,/Resources/StringResources.Srb.xaml");
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
         }
 
         private void ToEnglish(object sender, RoutedEventArgs e)
-        {
-
+        {            
+            ResourceDictionary resourceDictionary = new ResourceDictionary();
+            resourceDictionary.Source = new Uri("pack://application:,,,/Resources/StringResources.En.xaml");
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
         }
     }
 }

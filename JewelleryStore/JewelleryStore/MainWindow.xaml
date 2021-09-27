@@ -164,7 +164,8 @@
                     </TransformGroup>
                 </materialDesign:Card.RenderTransform>
             </materialDesign:Card>
-
+            
+            <!--
             <ComboBox Grid.Row="4" Grid.Column="3" Cursor="Hand" VerticalAlignment="Bottom"
                   HorizontalContentAlignment="Center"
                   VerticalContentAlignment="Center"
@@ -180,6 +181,22 @@
                 <ComboBoxItem
                      Content="English" />
             </ComboBox>
+             -->
+
+
+            <ToggleButton Grid.Row="4" Grid.Column="3" 
+                    Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                    Content="SR"   FontSize="11"
+                    HorizontalContentAlignment="Center"
+                    FontWeight="Bold"
+                          Foreground="#303030"
+                    VerticalAlignment="Bottom"
+                    Unchecked="ToSerbian"
+                    Checked="ToEnglish"
+                    materialDesign:ToggleButtonAssist.OnContent="EN" Canvas.Left="10" Canvas.Top="320" Height="35" Width="35" 
+                    materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                    materialDesign:ColorZoneAssist.Background="White"/>
+
 
             <Separator Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Background="#80CBC4" Foreground="#80CBC4" Height="5" Margin="1,0,1,1">
                 <Separator.RenderTransform>
