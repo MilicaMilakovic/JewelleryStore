@@ -89,6 +89,9 @@
     <Compile Include="ProductCheckout.xaml.cs">
       <DependentUpon>ProductCheckout.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProductsPage.xaml.cs">
+      <DependentUpon>ProductsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="proizvod.cs" />
     <Compile Include="racun.cs" />
     <Compile Include="racun_stavka.cs" />
@@ -116,6 +119,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ProductCheckout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProductsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

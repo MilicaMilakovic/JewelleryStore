@@ -24,47 +24,7 @@ namespace JewelleryStore
         public AdminWindow()
         {
             InitializeComponent();
-            ShowAll();
-        }
-
-
-        private void ShowAll()
-        {
-
-            products.Children.Clear();
-            foreach (proizvod p in db.proizvods)
-            {
-                Button btn = new Button();
-                btn.Style = (Style)Resources["ButtonStyle"];
-
-                StackPanel stackPanel = new StackPanel();
-                stackPanel.Style = (Style)Resources["StackPanelStyle"];
-
-                Image image = new Image();
-
-                image.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + p.Slika));
-                image.Style = (Style)Resources["ImageStyle"];
-
-                Label name = new Label();
-                name.HorizontalAlignment = HorizontalAlignment.Center;
-                name.Content = p.Naziv;
-                name.FontWeight = FontWeights.DemiBold;
-                name.FontSize = 11;
-
-
-                Label price = new Label();
-                price.HorizontalAlignment = HorizontalAlignment.Center;
-                price.Content = "BAM " + p.Cijena;
-                price.FontSize = 11;
-
-                stackPanel.Children.Add(image);
-                stackPanel.Children.Add(name);
-                stackPanel.Children.Add(price);
-
-                btn.Content = stackPanel;
-                btn.Name = "btn" + p.SifraProizvoda.ToString();
-                products.Children.Add(btn);
-            }
+            myFrame.Source = new Uri("pack://application:,,,/ProductsPage.xaml");
         }
 
         private void ToSerbian(object sender, RoutedEventArgs e)
@@ -85,6 +45,16 @@ namespace JewelleryStore
         private void LogOut(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void ShowProducts(object sender, RoutedEventArgs e)
+        {
+           myFrame.Source = new Uri("pack://application:,,,/ProductsPage.xaml");
+        }
+
+        private void ShowStaff(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
