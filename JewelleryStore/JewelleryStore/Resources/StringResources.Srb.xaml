@@ -20,4 +20,7 @@
     <system:String x:Key="Add">DODAJ</system:String>
     <system:String x:Key="Edit">IZMIJENI</system:String>
     <system:String x:Key="Delete">OBRIŠI</system:String>
+    <system:String x:Key="Products">Proizvodi</system:String>
+    <system:String x:Key="Staff">Zaposleni</system:String>
+    <system:String x:Key="Statistics">Statistika</system:String>
 </ResourceDictionary>

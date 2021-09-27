@@ -20,4 +20,7 @@
     <system:String x:Key="Add">ADD</system:String>
     <system:String x:Key="Edit">EDIT</system:String>
     <system:String x:Key="Delete">DELETE</system:String>
+    <system:String x:Key="Products">Products</system:String>
+    <system:String x:Key="Staff">Staff</system:String>
+    <system:String x:Key="Statistics">Statistics</system:String>
 </ResourceDictionary>
