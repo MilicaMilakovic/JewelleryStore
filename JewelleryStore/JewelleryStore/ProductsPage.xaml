@@ -36,18 +36,22 @@
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
                     Margin="10,7,386,2" Height="40"/>
 
-        <Button  Grid.Column="0" Grid.Row="0" 
-                 Margin="172,7,224,2"                 
-                      Style="{StaticResource MaterialDesignPaperLightButton}"
-                      Content="{DynamicResource Edit}"
-                     Foreground="#80CBC4"
-                      IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="40" />
+        <Button x:Name="editBtn"
+                Grid.Column="0" Grid.Row="0" 
+                Margin="172,7,224,2"                 
+                Style="{StaticResource MaterialDesignPaperLightButton}"
+                Content="{DynamicResource Edit}"
+                Foreground="#80CBC4"
+                IsEnabled="False" Height="40" />
 
-        <Button  Grid.Column="0" Grid.Row="0" Margin="336,7,61,2"
-                      Style="{StaticResource MaterialDesignPaperLightButton}"
-                      Content="{DynamicResource Delete}"
-                     Foreground="#80CBC4"
-                      IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="40" />
+        <Button  x:Name="deleteBtn"
+                 Click="DeleteProduct"
+                 Grid.Column="0" Grid.Row="0" Margin="336,7,61,2"
+                 Style="{StaticResource MaterialDesignPaperLightButton}"
+                 Content="{DynamicResource Delete}"
+                 Foreground="#80CBC4"
+                 IsEnabled="False"
+                 Height="40" />
 
         <TextBox Grid.Row="0" Grid.Column="1" KeyDown="Search"
                  x:Name="SearchField"

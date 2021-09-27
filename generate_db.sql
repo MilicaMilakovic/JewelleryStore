@@ -70,6 +70,7 @@ CREATE TABLE IF NOT EXISTS `store_db`.`PROIZVOD` (
   `Kolicina` INT NOT NULL,
   `Slika` VARCHAR(150) NULL,
   `Opis` VARCHAR(45) NULL,
+  `isActive` TINYINT(1) NULL DEFAULT 1,
   `tipProizvoda` INT NOT NULL,
   PRIMARY KEY (`SifraProizvoda`),
   INDEX `fk_PROIZVOD_TIP_PROIZVODA_idx` (`tipProizvoda` ASC) VISIBLE,

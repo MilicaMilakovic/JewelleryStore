@@ -32,6 +32,8 @@ namespace JewelleryStore
         [StringLength(45)]
         public string Opis { get; set; }
 
+        public bool? isActive { get; set; }
+
         public int tipProizvoda { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -35,6 +35,10 @@ INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipP
 INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Star Navy Bracelet', '73.91', '125', 'StarNavyBracelet.jpg', '4');
 INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `tipProizvoda`) VALUES ('Sunseeker Bracelet', '74.91', '125', 'SunseekerBracelet.jpg', '4');
 
+
+INSERT INTO `store_db`.`proizvod` (`Naziv`, `Cijena`, `Kolicina`, `Slika`, `isActive`, `tipProizvoda`) VALUES ('Test', '100', '125', '1.jpg', '1', '4');
+
 select * from racun;
 select * from racun_stavka;
 select * from zaposleni;
+select * from proizvod;
