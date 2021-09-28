@@ -77,8 +77,10 @@
                Margin="10,10,435,10"
                FontWeight="Bold" Foreground="#36BEB3"
                VerticalAlignment="Center" Height="28"/>
-       
-         <!-- content -->
+
+      
+        
+        <!-- content -->
         <Frame x:Name="myFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="2">
             
         </Frame>

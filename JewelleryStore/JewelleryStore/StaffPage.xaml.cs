@@ -48,6 +48,11 @@ namespace JewelleryStore
             ShowUsers();
         }
 
+        private void AddUser(object sender, RoutedEventArgs e)
+        {
+            new EditUser().Show();
+        }
+
         /*
         private void Search(object sender, KeyEventArgs e)
         {

@@ -29,7 +29,7 @@
 
 
 
-        <Button Grid.Column="0" Grid.Row="0"                
+        <Button Grid.Column="0" Grid.Row="0"   Click="AddUser"             
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     Content="{DynamicResource Add}"
                     Foreground="White"                   
@@ -38,8 +38,8 @@
 
         <Button x:Name="refresh" Click="Refresh" Grid.Column="1"
                 HorizontalAlignment="Right"
-                Style="{StaticResource MaterialDesignIconButton}"
-              <materialDesign:PackIcon
+                Style="{StaticResource MaterialDesignIconButton}" RenderTransformOrigin="0.062,0.5" Margin="0,0,10,1">
+            <materialDesign:PackIcon
                 Kind="Refresh"
                />
         </Button>

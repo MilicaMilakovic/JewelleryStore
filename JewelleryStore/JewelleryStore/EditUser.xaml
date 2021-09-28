@@ -13,13 +13,15 @@
       >
 
     <Border BorderBrush="#80CBC4" BorderThickness="2" >
-         
+
         <Grid >
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="47*"/>
-                <RowDefinition Height="108*"/>
-                <RowDefinition Height="107*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
                 <RowDefinition Height="122*"/>
                 <RowDefinition Height="82*"/>
             </Grid.RowDefinitions>
@@ -34,36 +36,41 @@
             <TextBox x:Name="lastnameField" Grid.Row="1" Width="350" Height="40" 
                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                    materialDesign:HintAssist.Hint="{DynamicResource Lastname}"
-                   HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,20"/>
+                   HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,20" Grid.RowSpan="2"/>
 
-            <TextBox x:Name="usernameField" Grid.Row="2" Width="350" Height="40" 
+            <TextBox x:Name="usernameField" Grid.Row="3" Width="350" Height="40" 
                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                    materialDesign:HintAssist.Hint="{DynamicResource Username}"
                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
 
-            <TextBox x:Name="passwordField"  Grid.Row="2" Width="350"  Height="40" 
+            <TextBox x:Name="passwordField"  Grid.Row="4" Width="350"  Height="40" 
                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                    materialDesign:HintAssist.Hint="{DynamicResource Password}"
                    HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,20"/>
 
-            <TextBox x:Name="salaryField"  Grid.Row="3" Width="350" 
+            <TextBox x:Name="salaryField"  Grid.Row="5" Width="350" 
                     Height="40" 
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                     materialDesign:HintAssist.Hint="{DynamicResource Pay}"
                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
             <DatePicker x:Name="dateSince"
               materialDesign:HintAssist.Hint="{DynamicResource Since}"
-              Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="20,57,240,9" Grid.Row="3" Height="56" />
+              Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="20,57,240,9" Grid.Row="5" Height="56" />
 
-            <Button Click="EditUserInfo"
+            <Button x:Name="EditBtn" Click="EditUserInfo"
           Style="{StaticResource MaterialDesignOutlinedLightButton}"            
-          Content="{DynamicResource Edit}" Margin="90,10,92,22" Grid.Row="4" Height="40"    
+          Content="{DynamicResource Edit}" Margin="90,15,92,27" Grid.Row="6" Height="40"    
          />
 
-            <RadioButton Grid.Row="3" x:Name="adminCheckBox"
+            <Button x:Name="AddBtn" Click="AddUser" Visibility="Collapsed" 
+          Style="{StaticResource MaterialDesignOutlinedLightButton}"            
+          Content="{DynamicResource Add}" Margin="90,15,92,27" Grid.Row="6" Height="40"    
+         />
+            
+            <RadioButton Grid.Row="5" x:Name="adminCheckBox"
           Style="{StaticResource MaterialDesignChoiceChipPrimaryOutlineRadioButton}"
           IsChecked="False"         
-          Content="Admin" Margin="258,63,0,0" Width="74" Height="43" VerticalAlignment="Top" />
+          Content="Admin" Margin="244,63,0,0" Width="88" Height="43" VerticalAlignment="Top" />
             <Button Click="Close"
           Style="{StaticResource MaterialDesignFlatLightButton}"                 
           Margin="339,0,0,10" Height="Auto">
