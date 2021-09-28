@@ -1,0 +1,85 @@
+﻿<Window x:Class="JewelleryStore.ProductDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:JewelleryStore"
+        mc:Ignorable="d"
+        Title="ProductDialog"  Height="470" Width="400"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+    <Border BorderBrush="#80CBC4" BorderThickness="2" >
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="47*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="122*"/>
+                <RowDefinition Height="82*"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="nameField" Grid.Row="1" Width="350" Height="40"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                 materialDesign:HintAssist.Hint="{DynamicResource ProductName}"
+                 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+
+            <TextBox x:Name="salaryField"  Grid.Row="2" Width="350" 
+                    Height="40" 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    materialDesign:HintAssist.Hint="{DynamicResource Price}"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+
+            <TextBox x:Name="quantityyField"  Grid.Row="3" Width="350" 
+                    Height="40" 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    materialDesign:HintAssist.Hint="{DynamicResource Quantity}"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+
+            <ComboBox Grid.Row="4"
+                x:Name="tipProizvoda"
+                Style="{StaticResource MaterialDesignOutlinedComboBox}"      
+                materialDesign:HintAssist.Hint="{DynamicResource Type}"                
+                Width="256" Margin="20,0,120,0">
+                <ComboBoxItem
+                  Content="{DynamicResource Necklaces}" />
+                <ComboBoxItem
+                  Content="{DynamicResource Rings}" />
+                <ComboBoxItem
+                  Content="{DynamicResource Earrings}" />
+                <ComboBoxItem
+                  Content="{DynamicResource Wristwear}" />
+            </ComboBox>
+
+            <Button Click="Close"
+             Style="{StaticResource MaterialDesignFlatLightButton}"                 
+             Margin="339,0,0,10" Height="Auto">
+                <materialDesign:PackIcon Kind="Close" />
+            </Button>
+
+            <Image x:Name="image" Grid.Row="5" Width="120" Margin="234,10,42,10" Stretch="UniformToFill"></Image>
+            <Button Click="AddImage"
+                  Style="{StaticResource MaterialDesignFlatLightButton}"
+                  Content="{DynamicResource AddImage}" Margin="42,44,185,50" Grid.Row="5"
+                />
+
+
+            <Button x:Name="EditBtn" Click="EditProductInfo"
+          Style="{StaticResource MaterialDesignOutlinedLightButton}"            
+          Content="{DynamicResource Edit}" Margin="90,15,92,27" Grid.Row="6" Height="40"    
+         />
+
+            <Button x:Name="AddBtn" Click="AddProduct" Visibility="Collapsed" 
+          Style="{StaticResource MaterialDesignOutlinedLightButton}"            
+          Content="{DynamicResource Add}" Margin="90,15,92,27" Grid.Row="6" Height="40"    
+         />
+
+
+
+        </Grid>
+    </Border>
+</Window>

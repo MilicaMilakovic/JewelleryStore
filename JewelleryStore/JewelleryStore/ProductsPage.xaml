@@ -29,13 +29,13 @@
 
 
 
-        <Button Grid.Column="0" Grid.Row="0"                
+        <Button Grid.Column="0" Grid.Row="0" Click="AddProduct"                
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     Content="{DynamicResource Add}"
                     Foreground="White"
                     Margin="10,7,386,2" Height="40"/>
 
-        <Button x:Name="editBtn"
+        <Button x:Name="editBtn" Click="EditButton"
                 Grid.Column="0" Grid.Row="0" 
                 Margin="172,7,224,2"                 
                 Style="{StaticResource MaterialDesignPaperLightButton}"

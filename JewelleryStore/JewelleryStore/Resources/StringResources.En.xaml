@@ -28,4 +28,9 @@
     <system:String x:Key="Pay">Salary</system:String>
     <system:String x:Key="Name">Name</system:String>
     <system:String x:Key="Lastname">Lastname</system:String>
+    <system:String x:Key="Type">Product type</system:String>
+    <system:String x:Key="Price">Price</system:String>
+    <system:String x:Key="Quantity">Quantity</system:String>
+    <system:String x:Key="ProductName">Product Name</system:String>
+    <system:String x:Key="AddImage">Add Image</system:String>
 </ResourceDictionary>

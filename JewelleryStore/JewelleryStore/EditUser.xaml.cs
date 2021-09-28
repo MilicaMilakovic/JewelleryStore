@@ -70,7 +70,6 @@ namespace JewelleryStore
 
             db.SaveChanges();
             this.Close();
-            //Console.WriteLine(zap.Ime + " " + zap.Prezime + " " + zap.KorisnickoIme +  " " + zap.Lozinka + " " + zap.Plata + " " + zap.isAdmin + " " +zap.ZaposlenOd );
         }
 
         private void AddUser(object sender, RoutedEventArgs e)
@@ -92,7 +91,6 @@ namespace JewelleryStore
             db.zaposlenis.Add(user);
             db.SaveChanges();
             this.Close();
-
         }
     }
 }

@@ -183,5 +183,15 @@ namespace JewelleryStore
             deleteBtn.IsEnabled = false;
             editBtn.IsEnabled = false;
         }
+
+        private void AddProduct(object sender, RoutedEventArgs e)
+        {
+            new ProductDialog().Show();
+        }
+
+        private void EditButton(object sender, RoutedEventArgs e)
+        {
+            new ProductDialog(selectedItem).Show();
+        }
     }        
 }

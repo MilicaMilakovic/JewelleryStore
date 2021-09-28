@@ -32,7 +32,6 @@ namespace JewelleryStore
         private void ShowUsers()
         {
             users.Children.Clear();
-
             foreach(var u in db.zaposlenis)
             {
                 if(u.isActive == true)
@@ -40,7 +39,6 @@ namespace JewelleryStore
                     users.Children.Add(new StaffControl(u) as UIElement);
                 }
             }
-
         }
 
         private void Refresh(object sender, RoutedEventArgs e)

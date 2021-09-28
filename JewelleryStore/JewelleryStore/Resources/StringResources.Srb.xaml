@@ -28,4 +28,9 @@
     <system:String x:Key="Pay">Plata</system:String>
     <system:String x:Key="Name">Ime</system:String>
     <system:String x:Key="Lastname">Prezime</system:String>
+    <system:String x:Key="Type">Tip proizvoda</system:String>
+    <system:String x:Key="Price">Cijena</system:String>
+    <system:String x:Key="Quantity">Količina</system:String>
+    <system:String x:Key="ProductName">Naziv proizvoda</system:String>
+    <system:String x:Key="AddImage">Dodaj sliku</system:String>
 </ResourceDictionary>
