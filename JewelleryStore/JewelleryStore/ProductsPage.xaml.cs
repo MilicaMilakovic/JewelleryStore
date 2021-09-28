@@ -22,6 +22,7 @@ namespace JewelleryStore
     {
         StoreDb db = new StoreDb();
         proizvod selectedItem;
+        
 
         public ProductsPage()
         {

@@ -21,6 +21,8 @@ namespace JewelleryStore
     {
         private StoreDb db = new StoreDb();
         private proizvod product;
+        private BitmapImage img;
+      
 
         public ProductDialog()
         {
@@ -34,6 +36,16 @@ namespace JewelleryStore
             InitializeComponent();
             EditBtn.Visibility = Visibility.Visible;
             AddBtn.Visibility = Visibility.Collapsed;
+
+            nameField.Text = product.Naziv;
+            priceField.Text = product.Cijena.ToString();
+            quantityField.Text = product.Kolicina.ToString();
+
+            string selection = "type" + product.tipProizvoda;
+
+            tipProizvoda.SelectedItem = tipProizvoda.Items.GetItemAt(product.tipProizvoda-1);
+
+            image.Source = new BitmapImage( new Uri("pack://application:,,,/images/" + product.Slika));
             this.product = product;
         }
 
@@ -49,11 +61,27 @@ namespace JewelleryStore
 
         private void EditProductInfo(object sender, RoutedEventArgs e)
         {
+            var item = db.proizvods.First(o => o.SifraProizvoda == product.SifraProizvoda);
+
+            item.Naziv = nameField.Text;
+            item.Cijena = Decimal.Parse(priceField.Text);
+            item.Kolicina = Int32.Parse(quantityField.Text);
+
+            item.tipProizvoda = tipProizvoda.SelectedIndex+1;
+
+            db.SaveChanges();
             this.Close();
         }
 
         private void AddProduct(object sender, RoutedEventArgs e)
         {
+            product = new proizvod();
+
+            product.Naziv = nameField.Text;
+            product.Cijena = Decimal.Parse(priceField.Text);
+            product.Kolicina = Int32.Parse(quantityField.Text);
+            product.tipProizvoda = tipProizvoda.SelectedIndex;
+
             this.Close();
         }
     }

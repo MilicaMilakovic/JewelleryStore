@@ -28,24 +28,39 @@
                  materialDesign:HintAssist.Hint="{DynamicResource ProductName}"
                  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
 
-            <TextBox x:Name="salaryField"  Grid.Row="2" Width="350" 
+            <TextBox x:Name="priceField"  Grid.Row="2" Width="350" 
                     Height="40" 
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                     materialDesign:HintAssist.Hint="{DynamicResource Price}"
                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
 
-            <TextBox x:Name="quantityyField"  Grid.Row="3" Width="350" 
+            <TextBox x:Name="quantityField"  Grid.Row="3" Width="350" 
                     Height="40" 
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                     materialDesign:HintAssist.Hint="{DynamicResource Quantity}"
                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
 
+            <ListBox Grid.Row="4"
+                    Style="{StaticResource MaterialDesignChoiceChipPrimaryOutlineListBox}"
+                x:Name="tipProizvoda" Margin="20,5,-10,121" Grid.RowSpan="2">
+                <ListBoxItem x:Name="type1"
+                         Content="{DynamicResource Necklaces}" />
+                <ListBoxItem x:Name="type2"
+                        Content="{DynamicResource Rings}" />
+                <ListBoxItem x:Name="type3"
+                         Content="{DynamicResource Earrings }" />
+                <ListBoxItem  x:Name="type4"                      
+                         Content="{DynamicResource Wristwear}" />
+            </ListBox>
+
+            <!--
             <ComboBox Grid.Row="4"
                 x:Name="tipProizvoda"
+                SelectedValuePath="Content"
                 Style="{StaticResource MaterialDesignOutlinedComboBox}"      
                 materialDesign:HintAssist.Hint="{DynamicResource Type}"                
                 Width="256" Margin="20,0,120,0">
-                <ComboBoxItem
+                <ComboBoxItem 
                   Content="{DynamicResource Necklaces}" />
                 <ComboBoxItem
                   Content="{DynamicResource Rings}" />
@@ -54,7 +69,7 @@
                 <ComboBoxItem
                   Content="{DynamicResource Wristwear}" />
             </ComboBox>
-
+-->
             <Button Click="Close"
              Style="{StaticResource MaterialDesignFlatLightButton}"                 
              Margin="339,0,0,10" Height="Auto">

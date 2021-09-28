@@ -20,6 +20,7 @@ namespace JewelleryStore
     public partial class AdminWindow : Window
     {
         StoreDb db = new StoreDb();
+        
 
         public AdminWindow()
         {
@@ -31,7 +32,8 @@ namespace JewelleryStore
         {
             ResourceDictionary resourceDictionary = new ResourceDictionary();
             resourceDictionary.Source = new Uri("pack://application:,,,/Resources/StringResources.Srb.xaml");
-            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);          
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
+
         }
 
         private void ToEnglish(object sender, RoutedEventArgs e)
@@ -39,7 +41,8 @@ namespace JewelleryStore
             // trenutno je na sprskom, mijenjam na engleski
             ResourceDictionary resourceDictionary = new ResourceDictionary();
             resourceDictionary.Source = new Uri("pack://application:,,,/Resources/StringResources.En.xaml");
-            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);           
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
+                       
         }
 
         private void LogOut(object sender, RoutedEventArgs e)
@@ -51,6 +54,7 @@ namespace JewelleryStore
         {
             pageLabel.Content = (string)App.Current.Resources["Products"];
             myFrame.Source = new Uri("pack://application:,,,/ProductsPage.xaml");
+
         }
 
         private void ShowStaff(object sender, RoutedEventArgs e)
