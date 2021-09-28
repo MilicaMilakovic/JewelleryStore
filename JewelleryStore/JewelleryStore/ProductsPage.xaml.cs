@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+
 
 namespace JewelleryStore
 {
@@ -46,7 +48,9 @@ namespace JewelleryStore
 
                     Image image = new Image();
 
-                    image.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + p.Slika));
+                    var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+
+                    image.Source = new BitmapImage(new Uri(projectPath+ "/images/" + p.Slika));
                     image.Style = (Style)Resources["ImageStyle"];
 
                     Label name = new Label();

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace JewelleryStore
 {
@@ -40,7 +41,10 @@ namespace JewelleryStore
 
             product = db.proizvods.First(o => o.SifraProizvoda == item.SifraProizvoda);
 
-            productPhoto.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + product.Slika));
+            var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+
+           
+            productPhoto.Source = new BitmapImage(new Uri( projectPath + "/images/" + product.Slika));
             productName.Text = product.Naziv;
             quantityLabel.Content = item.Kolicina;
             price.Content = "BAM "+ (item.Kolicina * product.Cijena).ToString();

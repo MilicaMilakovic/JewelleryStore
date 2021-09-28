@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using System.IO;
+
 
 namespace JewelleryStore
 {
@@ -21,7 +24,7 @@ namespace JewelleryStore
     {
         private StoreDb db = new StoreDb();
         private proizvod product;
-        private BitmapImage img;
+        private string img;
       
 
         public ProductDialog()
@@ -45,7 +48,9 @@ namespace JewelleryStore
 
             tipProizvoda.SelectedItem = tipProizvoda.Items.GetItemAt(product.tipProizvoda-1);
 
-            image.Source = new BitmapImage( new Uri("pack://application:,,,/images/" + product.Slika));
+            var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+
+            image.Source = new BitmapImage( new Uri(projectPath+"/images/" + product.Slika));
             this.product = product;
         }
 
@@ -56,7 +61,31 @@ namespace JewelleryStore
 
         private void AddImage(object sender, RoutedEventArgs e)
         {
-            
+            var filePicker = new Microsoft.Win32.OpenFileDialog();
+
+            filePicker.DefaultExt=".jpg";
+            filePicker.Filter = "JPG Files (*.jpg)|*.jpg|JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png";
+
+            Nullable<bool> result = filePicker.ShowDialog();
+
+            if (result == true)
+            {
+                // Open document 
+                string filePath = filePicker.FileName;
+                Console.WriteLine(filePath);
+
+                string[] parts = filePath.Split('\\');
+
+                string fileName = parts[parts.Length - 1];
+                img = fileName;
+
+                Console.WriteLine(fileName);
+                var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+
+                File.Copy(filePath, projectPath+"/images/" + fileName, true);
+
+                image.Source = new BitmapImage(new Uri(projectPath + "/images/" + fileName));
+            }
         }
 
         private void EditProductInfo(object sender, RoutedEventArgs e)
@@ -68,6 +97,8 @@ namespace JewelleryStore
             item.Kolicina = Int32.Parse(quantityField.Text);
 
             item.tipProizvoda = tipProizvoda.SelectedIndex+1;
+            if (img != null)
+                item.Slika = img;
 
             db.SaveChanges();
             this.Close();
@@ -82,6 +113,10 @@ namespace JewelleryStore
             product.Kolicina = Int32.Parse(quantityField.Text);
             product.tipProizvoda = tipProizvoda.SelectedIndex;
 
+            if (img != null)
+                product.Slika = img;
+
+            db.SaveChanges();
             this.Close();
         }
     }

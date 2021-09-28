@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
 using System.Collections.ObjectModel;
+using System.IO;
+
 
 namespace JewelleryStore
 {
@@ -54,7 +56,9 @@ namespace JewelleryStore
 
                     Image image = new Image();
 
-                    image.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + p.Slika));
+                    var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+
+                    image.Source = new BitmapImage(new Uri(projectPath+"/images/" + p.Slika));
                     image.Style = (Style)Resources["ImageStyle"];
 
                     Label name = new Label();
@@ -97,8 +101,9 @@ namespace JewelleryStore
                     stackPanel.Style = (Style)Resources["StackPanelStyle"];
 
                     Image image = new Image();
+                    var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
-                    image.Source = new BitmapImage(new Uri("pack://application:,,,/images/" + p.Slika));   
+                    image.Source = new BitmapImage(new Uri(projectPath + "/images/" + p.Slika));
                     image.Style = Resources["ImageStyle"] as Style;
 
                     Label name = new Label();
