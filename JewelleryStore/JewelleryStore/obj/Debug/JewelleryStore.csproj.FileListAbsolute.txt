@@ -48,3 +48,11 @@ C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\E
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\EditUser.baml
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\ProductDialog.g.cs
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\ProductDialog.baml
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\StatisticsPage.g.cs
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\bin\Debug\LiveCharts.dll
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\bin\Debug\LiveCharts.pdb
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\bin\Debug\LiveCharts.xml
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\StatisticsPage.baml

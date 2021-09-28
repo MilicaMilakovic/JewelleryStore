@@ -52,15 +52,21 @@ namespace JewelleryStore
 
         private void ShowProducts(object sender, RoutedEventArgs e)
         {
-            pageLabel.Content = (string)App.Current.Resources["Products"];
+            //pageLabel.Content = (string)App.Current.Resources["Products"];
             myFrame.Source = new Uri("pack://application:,,,/ProductsPage.xaml");
 
         }
 
         private void ShowStaff(object sender, RoutedEventArgs e)
         {
-            pageLabel.Content = (string) App.Current.Resources["Staff"];
+            //pageLabel.Content = (string) App.Current.Resources["Staff"];
             myFrame.Source = new Uri("pack://application:,,,/StaffPage.xaml");
+        }
+
+        private void ShowStatistics(object sender, RoutedEventArgs e)
+        {
+            myFrame.Source = new Uri("pack://application:,,,/StatisticsPage.xaml");
+
         }
     }
 }

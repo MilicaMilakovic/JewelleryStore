@@ -50,7 +50,7 @@ namespace JewelleryStore
 
                     var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
-                    image.Source = new BitmapImage(new Uri(projectPath+ "/images/" + p.Slika));
+                    image.Source = new BitmapImage(new Uri(projectPath + "/images/" + p.Slika));
                     image.Style = (Style)Resources["ImageStyle"];
 
                     Label name = new Label();
