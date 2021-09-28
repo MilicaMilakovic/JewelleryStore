@@ -32,11 +32,18 @@
         <Button Grid.Column="0" Grid.Row="0"                
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     Content="{DynamicResource Add}"
-                    Foreground="White"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                    Foreground="White"                   
                     Margin="10,7,386,2" Height="40"/>
 
 
+        <Button x:Name="refresh" Click="Refresh" Grid.Column="1"
+                HorizontalAlignment="Right"
+                Style="{StaticResource MaterialDesignIconButton}"
+              <materialDesign:PackIcon
+                Kind="Refresh"
+               />
+        </Button>
+        <!--
         <TextBox Grid.Row="0" Grid.Column="1" KeyDown="Search"
                  x:Name="SearchField"
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -53,11 +60,13 @@
 
             </materialDesign:HintAssist.Hint>
         </TextBox>
-
+           -->
         <Label Content="{DynamicResource User}"  Foreground="#558782" Grid.Row="1" Height="30" Margin="113,0,331,22"/>
         <Label Content="{DynamicResource Username}"  Foreground="#558782" Grid.Row="1" Height="30" Margin="212,0,218,22"/>
         <Label Content="{DynamicResource Since}"  Foreground="#558782" Grid.Row="1" Height="30" Margin="333,0,104,22"/>
         <Label Content="{DynamicResource Pay}"  Foreground="#558782" Grid.Row="1" Height="30" Margin="464,0,190,22" Grid.ColumnSpan="2"/>
+        <Label Content="{DynamicResource Edit}"  Foreground="#558782" Grid.Row="1" Height="30" Margin="52,0,96,22" Grid.Column="1"/>
+        <Label Content="{DynamicResource Delete}"  Foreground="#558782" Grid.Row="1" Height="30" Margin="116,0,10,22" Grid.Column="1"/>
 
 
         <!-- users panel -->

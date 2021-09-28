@@ -43,10 +43,35 @@ namespace JewelleryStore
 
         }
 
+        private void Refresh(object sender, RoutedEventArgs e)
+        {
+            ShowUsers();
+        }
+
+        /*
         private void Search(object sender, KeyEventArgs e)
         {
-
+            Console.WriteLine("search staff");
+            if(e.Key == Key.Enter)
+            {
+                string key = SearchField.Text;
+                ShowFilter(key);
+            }
         }
+
+        private void ShowFilter(string key)
+        {
+            users.Children.Clear();
+            Console.WriteLine("show filter");
+            foreach(var u in db.zaposlenis)
+            {
+                if(u.isActive == true && u.Ime.Contains(key))
+                {
+                    users.Children.Add(new StaffControl(u) as UIElement);
+                }
+            }
+        }
+        */
     }
 
 

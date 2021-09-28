@@ -44,3 +44,5 @@ C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\S
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\StaffPage.g.cs
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\StaffControl.baml
 C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\StaffPage.baml
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\EditUser.g.cs
+C:\Users\Milica\Desktop\JewelleryStore\JewelleryStore\JewelleryStore\obj\Debug\EditUser.baml

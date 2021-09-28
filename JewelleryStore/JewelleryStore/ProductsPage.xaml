@@ -33,7 +33,6 @@
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     Content="{DynamicResource Add}"
                     Foreground="White"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
                     Margin="10,7,386,2" Height="40"/>
 
         <Button x:Name="editBtn"

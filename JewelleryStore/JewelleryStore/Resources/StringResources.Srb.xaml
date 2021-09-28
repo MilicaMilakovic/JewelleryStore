@@ -26,4 +26,6 @@
     <system:String x:Key="User">Zaposleni</system:String>
     <system:String x:Key="Since">Zaposlen od</system:String>
     <system:String x:Key="Pay">Plata</system:String>
+    <system:String x:Key="Name">Ime</system:String>
+    <system:String x:Key="Lastname">Prezime</system:String>
 </ResourceDictionary>

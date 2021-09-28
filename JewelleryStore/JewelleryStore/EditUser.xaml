@@ -1,0 +1,74 @@
+﻿<Window x:Class="JewelleryStore.EditUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:JewelleryStore"
+        mc:Ignorable="d"
+        Title="EditUser" Height="470" Width="400"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+      >
+
+    <Border BorderBrush="#80CBC4" BorderThickness="2" >
+         
+        <Grid >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="47*"/>
+                <RowDefinition Height="108*"/>
+                <RowDefinition Height="107*"/>
+                <RowDefinition Height="122*"/>
+                <RowDefinition Height="82*"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="userLabel" Content="User" FontSize="15" Margin="10,0,0,0" FontWeight="Bold" Foreground="#80CBC4"/>
+
+            <TextBox x:Name="nameField" Grid.Row="1" Width="350" Height="40"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                 materialDesign:HintAssist.Hint="{DynamicResource Name}"
+                 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"
+                   />
+            <TextBox x:Name="lastnameField" Grid.Row="1" Width="350" Height="40" 
+                   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                   materialDesign:HintAssist.Hint="{DynamicResource Lastname}"
+                   HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,20"/>
+
+            <TextBox x:Name="usernameField" Grid.Row="2" Width="350" Height="40" 
+                   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                   materialDesign:HintAssist.Hint="{DynamicResource Username}"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+
+            <TextBox x:Name="passwordField"  Grid.Row="2" Width="350"  Height="40" 
+                   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                   materialDesign:HintAssist.Hint="{DynamicResource Password}"
+                   HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,20"/>
+
+            <TextBox x:Name="salaryField"  Grid.Row="3" Width="350" 
+                    Height="40" 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    materialDesign:HintAssist.Hint="{DynamicResource Pay}"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+            <DatePicker x:Name="dateSince"
+              materialDesign:HintAssist.Hint="{DynamicResource Since}"
+              Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="20,57,240,9" Grid.Row="3" Height="56" />
+
+            <Button Click="EditUserInfo"
+          Style="{StaticResource MaterialDesignOutlinedLightButton}"            
+          Content="{DynamicResource Edit}" Margin="90,10,92,22" Grid.Row="4" Height="40"    
+         />
+
+            <RadioButton Grid.Row="3" x:Name="adminCheckBox"
+          Style="{StaticResource MaterialDesignChoiceChipPrimaryOutlineRadioButton}"
+          IsChecked="False"         
+          Content="Admin" Margin="258,63,0,0" Width="74" Height="43" VerticalAlignment="Top" />
+            <Button Click="Close"
+          Style="{StaticResource MaterialDesignFlatLightButton}"                 
+          Margin="339,0,0,10" Height="Auto">
+                <materialDesign:PackIcon Kind="Close" />
+            </Button>
+        </Grid>
+    </Border>
+</Window>

@@ -26,4 +26,6 @@
     <system:String x:Key="User">Employee</system:String>
     <system:String x:Key="Since">Since</system:String>
     <system:String x:Key="Pay">Salary</system:String>
+    <system:String x:Key="Name">Name</system:String>
+    <system:String x:Key="Lastname">Lastname</system:String>
 </ResourceDictionary>

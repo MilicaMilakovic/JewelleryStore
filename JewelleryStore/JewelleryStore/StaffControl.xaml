@@ -25,12 +25,13 @@
         <Label x:Name="usernameLabel" Grid.Column="2"  Margin="7,39"/>
         <Label x:Name="sinceLabel" Grid.Column="3"  Margin="7,39"/>
         <Label x:Name="salaryLabel" Grid.Column="4"  Margin="7,39"/>
-        <Button  Content="{materialDesign:PackIcon Kind=Edit}"  Margin="9.667,34,0,34"       
-                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+        <Button  Content="{materialDesign:PackIcon Kind=Edit}"  Margin="9.667,34,0,34"   
+                 Click="EditUser"
+                 IsEnabled="True"
                  Grid.Column="6" Width="50" HorizontalAlignment="Left" Height="Auto" />
         <Button  Content="{materialDesign:PackIcon Kind=Remove}"  Margin="0,34,10,34" 
                  Click="DeleteUser"
-                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 IsEnabled="True"
                  Grid.Column="6" Width="50" HorizontalAlignment="Right" Height="Auto" />
 
     </Grid>

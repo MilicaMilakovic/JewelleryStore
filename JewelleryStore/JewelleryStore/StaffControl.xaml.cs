@@ -47,5 +47,10 @@ namespace JewelleryStore
             db.SaveChanges();
             ((StackPanel)this.Parent).Children.Remove(this);
         }
+
+        private void EditUser(object sender, RoutedEventArgs e)
+        {
+            new EditUser(user).Show();
+        }
     }
 }
