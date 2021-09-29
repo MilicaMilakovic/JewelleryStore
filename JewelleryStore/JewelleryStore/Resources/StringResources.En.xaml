@@ -37,5 +37,8 @@
     <system:String x:Key="Profit">PROFIT</system:String>
     <system:String x:Key="MonthProfit">Profit Based On Month</system:String>
     <system:String x:Key="Bills">BILLS</system:String>
-
+    <system:String x:Key="Themes">Themes</system:String>
+    <system:String x:Key="Blue">BLUE</system:String>
+    <system:String x:Key="Red">RED</system:String>
+    <system:String x:Key="Brown">BROWN</system:String>
 </ResourceDictionary>

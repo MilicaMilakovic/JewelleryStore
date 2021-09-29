@@ -33,6 +33,8 @@ namespace JewelleryStore
         {
             InitializeComponent();
             user.Content = staff.Ime;
+            var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            mainImage.Source = new BitmapImage(new Uri(projectPath + "/images/mainImage.jpg"));
             ShowAll();
         }
 
@@ -288,6 +290,88 @@ namespace JewelleryStore
             ResourceDictionary resourceDictionary = new ResourceDictionary();
             resourceDictionary.Source = new Uri("pack://application:,,,/Resources/StringResources.En.xaml");
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
+        }
+
+     
+
+        private void ChangeTheme(object sender, RoutedEventArgs e)
+        {
+            var btn = (RadioButton)sender;
+
+            if (btn.Tag.ToString() == "Theme1")
+            {
+                SwitchTheme1();
+            }
+            else if (btn.Tag.ToString() == "Theme2")
+            {
+                SwitchTheme2();
+            }
+            else
+                SwitchTheme3();
+        }
+
+        private void SwitchTheme1()
+        {
+            ResourceDictionary resourceDictionary1 = new ResourceDictionary();
+            ResourceDictionary resourceDictionary2 = new ResourceDictionary();
+            ResourceDictionary resourceDictionary3 = new ResourceDictionary();
+            ResourceDictionary resourceDictionary4 = new ResourceDictionary();
+
+            resourceDictionary1.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml");
+            resourceDictionary2.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml");
+            resourceDictionary3.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml");
+            resourceDictionary4.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Teal.xaml");
+
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary1);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary2);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary3);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary4);
+
+            var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            mainImage.Source = new BitmapImage(new Uri(projectPath + "/images/mainImage.jpg"));
+        }
+
+        private void SwitchTheme2()
+        {
+            ResourceDictionary resourceDictionary1 = new ResourceDictionary();
+            ResourceDictionary resourceDictionary2 = new ResourceDictionary();
+            ResourceDictionary resourceDictionary3 = new ResourceDictionary();
+            ResourceDictionary resourceDictionary4 = new ResourceDictionary();
+
+            resourceDictionary1.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml");
+            resourceDictionary2.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml");
+            resourceDictionary3.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Pink.xaml");
+            resourceDictionary4.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Green.xaml");
+
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary1);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary2);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary3);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary4);
+
+            var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            mainImage.Source = new BitmapImage(new Uri(projectPath + "/images/mainPhoto3.jpg"));
+        }
+
+
+        private void SwitchTheme3()
+        {
+            ResourceDictionary resourceDictionary1 = new ResourceDictionary();
+            ResourceDictionary resourceDictionary2 = new ResourceDictionary();
+            ResourceDictionary resourceDictionary3 = new ResourceDictionary();
+            ResourceDictionary resourceDictionary4 = new ResourceDictionary();
+
+            resourceDictionary1.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml");
+            resourceDictionary2.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml");
+            resourceDictionary3.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Brown.xaml");
+            resourceDictionary4.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Cyan.xaml");
+
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary1);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary2);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary3);
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary4);
+
+            var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            mainImage.Source = new BitmapImage(new Uri(projectPath + "/images/mainPhoto.jpg"));
         }
     }
 }

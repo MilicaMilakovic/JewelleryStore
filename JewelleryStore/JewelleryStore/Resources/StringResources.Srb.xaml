@@ -37,4 +37,8 @@
     <system:String x:Key="Profit">ZARADA</system:String>
     <system:String x:Key="MonthProfit">Zarada na mjesečnom nivou</system:String>
     <system:String x:Key="Bills">RAČUNI</system:String>
+    <system:String x:Key="Themes">Teme</system:String>
+    <system:String x:Key="Blue">PLAVA</system:String>
+    <system:String x:Key="Red">CRVENA</system:String>
+    <system:String x:Key="Brown">SMEĐA</system:String>
 </ResourceDictionary>

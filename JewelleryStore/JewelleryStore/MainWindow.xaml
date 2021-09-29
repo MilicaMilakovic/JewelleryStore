@@ -79,7 +79,7 @@
 
     <Border Background="White" >
 
-        <Grid ShowGridLines="False">
+        <Grid ShowGridLines="False" Background="{DynamicResource MaterialDesignPaper}">
 
             <Grid.ColumnDefinitions>
                 <!-- Left panel-->
@@ -111,7 +111,7 @@
 
 
             <!-- Image -->
-            <Image Source="/images/mainImage.jpg" Grid.Column="2" Grid.Row="0" 
+            <Image x:Name="mainImage" Source="/images/mainImage.jpg" Grid.Column="2" Grid.Row="0" 
                    Grid.RowSpan="6" Stretch="UniformToFill"  materialDesign:ShadowAssist.ShadowDepth="Depth3"/>
 
 
@@ -150,7 +150,7 @@
 
             <!-- side navbar -->
 
-            <materialDesign:Card Grid.Column="3" Grid.RowSpan="6" Background="#E2EEED"
+            <materialDesign:Card Grid.Column="3" Grid.RowSpan="6" Background="{DynamicResource PrimaryHueLightBrush}" Opacity="0.4"
                materialDesign:ShadowAssist.ShadowDepth="Depth2"
                 materialDesign:ShadowAssist.ShadowEdges="Left"
               Padding="32"
@@ -164,46 +164,62 @@
                     </TransformGroup>
                 </materialDesign:Card.RenderTransform>
             </materialDesign:Card>
-            
+
+            <Label Grid.Column="3" FontWeight="SemiBold" Foreground="{DynamicResource PrimaryHueLightBrush}"
+                   HorizontalContentAlignment="Center" Grid.Row="4" Content="{DynamicResource Themes}" Height="30" Margin="0,222,0,117"/>
+            <StackPanel Grid.Column="3" Grid.Row="4" VerticalAlignment="Bottom"
+                  Orientation="Vertical"
+                  Margin="0,0,0,4" > 
+                   <RadioButton Checked="ChangeTheme"
+                        Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
+                        Margin="2"                        
+                        Tag="Theme1"
+                        FontSize="13"
+                        Content="{DynamicResource Blue}" />
+                   <RadioButton Checked="ChangeTheme"
+                        Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
+                        Margin="2"
+                        FontSize="13"
+                        IsChecked="False"
+                        Tag="Theme2"
+                        Content="{DynamicResource Red}" />
+                   <RadioButton Checked="ChangeTheme"
+                        Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
+                        Margin="2"
+                        FontSize="13"
+                        IsChecked="False"  
+                        Tag="Theme3"
+                        Content="{DynamicResource Brown}" />
+            </StackPanel>
+
+           
             <!--
-            <ComboBox Grid.Row="4" Grid.Column="3" Cursor="Hand" VerticalAlignment="Bottom"
-                  HorizontalContentAlignment="Center"
-                  VerticalContentAlignment="Center"
-                  Style="{StaticResource MaterialDesignFloatingHintComboBox}"
-                                
-                  materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
-                  materialDesign:ColorZoneAssist.Mode="SecondaryLight"
-                  materialDesign:HintAssist.Hint="{DynamicResource Language}"
-                  
-                >
-                <ComboBoxItem
-                     Content="Srpski"  IsSelected="True"/>
-                <ComboBoxItem
-                     Content="English" />
-            </ComboBox>
-             -->
+            <Button Grid.Row="4" Grid.Column="3" Click="SwitchTheme"
+                    VerticalAlignment="Bottom" Content="switch" Margin="5,0,9,327"/>
 
-
-            <ToggleButton Grid.Row="4" Grid.Column="3" 
+            -->
+            
+            
+            <ToggleButton Grid.Row="5" Grid.Column="3" 
                     Style="{StaticResource MaterialDesignActionLightToggleButton}"
                     Content="SR"   FontSize="11"
                     HorizontalContentAlignment="Center"
                     FontWeight="Bold"
                           Foreground="#303030"
-                    VerticalAlignment="Bottom"
+                    VerticalAlignment="top"
                     Unchecked="ToSerbian"
                     Checked="ToEnglish"
                     materialDesign:ToggleButtonAssist.OnContent="EN" Canvas.Left="10" Canvas.Top="320" Height="35" Width="35" 
                     materialDesign:ShadowAssist.ShadowDepth="Depth2"
-                    materialDesign:ColorZoneAssist.Background="White"/>
+                    materialDesign:ColorZoneAssist.Background="White" Margin="28,10,27,0"/>
 
 
-            <Separator Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Background="#80CBC4" Foreground="#80CBC4" Height="5" Margin="1,0,1,1">
+            <Separator Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Background="{DynamicResource PrimaryHueLightBrush}" Foreground="{DynamicResource PrimaryHueLightBrush}" Height="5" Margin="1,0,1,1">
                 <Separator.RenderTransform>
                     <ScaleTransform ScaleY="2" />
                 </Separator.RenderTransform>
             </Separator>
-            <Separator Grid.Column="3" Background="#80CBC4" Foreground="#80CBC4" Margin="0,47,2,44" Grid.RowSpan="2">
+            <Separator Grid.Column="3" Background="{DynamicResource PrimaryHueLightBrush}" Foreground="{DynamicResource PrimaryHueLightBrush}" Margin="0,47,2,44" Grid.RowSpan="2">
                 <Separator.RenderTransform>
                     <ScaleTransform ScaleY="2" />
                 </Separator.RenderTransform>
@@ -226,10 +242,18 @@
                 </materialDesign:Chip.Icon>
             </materialDesign:Chip>
 
+            
+            
+            
+            
             <!-- navbar -->
             <Image Source="/images/logo.png" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,10,5"/>
 
-            <Grid  x:Name="navbar" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid  x:Name="navbar" 
+                   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                   Opacity="0.5"
+                   Background="{DynamicResource PrimaryHueLightBrush}">
+               
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition/>
@@ -239,14 +263,19 @@
                 </Grid.ColumnDefinitions>
                 <Button   Style="{StaticResource MaterialDesignFlatLightButton}" Click="ShowAll"
                          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" 
+                        Foreground="White"
                           Grid.Column="0"  Content="{DynamicResource Show All}" Height="Auto"/>
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}" Click="ShowNecklaces"
-                        Grid.Column="1"   Content="{DynamicResource Necklaces}" Height="Auto"/>
+                        Foreground="White"
+                         Grid.Column="1"   Content="{DynamicResource Necklaces}" Height="Auto"/>
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}"
-                       Grid.Column="2"   Content="{DynamicResource Rings}" Click="ShowRings" Height="Auto" />
+                       Foreground="White"
+                         Grid.Column="2"   Content="{DynamicResource Rings}" Click="ShowRings" Height="Auto" />
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}" Click="ShowEarrings"
-                        Grid.Column="3"  Content="{DynamicResource Earrings}" Height="Auto"/>
+                        Foreground="White"
+                         Grid.Column="3"  Content="{DynamicResource Earrings}" Height="Auto"/>
                 <Button  Style="{StaticResource MaterialDesignFlatLightButton}" Click="ShowWristwear"
+                        Foreground="White"
                          Grid.Column="4"   Content="{DynamicResource Wristwear}" Height="Auto"/>
 
                 <Separator Grid.ColumnSpan="5"   VerticalAlignment="Bottom" Foreground="#F8E2E7" Background="#F8E2E7" Margin="-1,0,1,3">
