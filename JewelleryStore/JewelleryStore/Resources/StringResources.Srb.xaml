@@ -33,4 +33,8 @@
     <system:String x:Key="Quantity">Količina</system:String>
     <system:String x:Key="ProductName">Naziv proizvoda</system:String>
     <system:String x:Key="AddImage">Dodaj sliku</system:String>
+    <system:String x:Key="ItemsSold">UKUPNO PRODANIH ARTIKALA</system:String>
+    <system:String x:Key="Profit">ZARADA</system:String>
+    <system:String x:Key="MonthProfit">Zarada na mjesečnom nivou</system:String>
+    <system:String x:Key="Bills">RAČUNI</system:String>
 </ResourceDictionary>

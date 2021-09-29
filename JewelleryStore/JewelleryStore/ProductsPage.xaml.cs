@@ -128,7 +128,6 @@ namespace JewelleryStore
                 }
 
             }
-
         }
         private void selectItem(object sender, RoutedEventArgs e)
         {

@@ -34,6 +34,9 @@ namespace JewelleryStore
             PointLabel = chartPoint =>
                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
+            profitLabel.Content ="BAM "+ totalProfit().ToString();
+            itemsLabel.Content = itemsTotal().ToString();
+
             int necklaces = count(1);
             int rings = count(2);
             int earrings = count(3);
@@ -68,11 +71,33 @@ namespace JewelleryStore
 
                 }
             };
+
             DataContext = this;
+
+            Bills.Children.Clear();
+            foreach(var racun in db.racuns.ToList())
+            {
+                Label rac = new Label();
+                rac.Margin = new Thickness(3);
+                rac.Background = (Brush)new BrushConverter().ConvertFrom("#E8E8E8");
+                rac.FontWeight = FontWeights.SemiBold;
+
+                System.Windows.Controls.Separator sep = new System.Windows.Controls.Separator();
+                sep.Background = Brushes.Gray;
+
+                rac.Content = racun.idRacuna + " | " + racun.DatumIzdavanja + " | " + racun.CijenaUkupno.ToString() + " | " + racun.ZAPOSLENI_idZaposlenog;
+
+                Bills.Children.Add(rac);
+                Bills.Children.Add(sep);
+            }
+
         }
 
         public SeriesCollection SeriesCollection { get; set; }
         public Func<ChartPoint, string> PointLabel { get; set; }
+        public string[] Labels { get; set; }
+        public Func<double, string> Formatter { get; set; }
+
 
         private void Chart_OnDataClick(object sender, ChartPoint chartpoint)
         {
@@ -89,21 +114,43 @@ namespace JewelleryStore
         private int count(int id)
         {
             int sum = 0;
-           // Console.WriteLine(id);
            foreach (var rac in db.racuns.ToList())
            {
-                //Console.WriteLine("racun : " + rac.idRacuna + " " + db.racuns.ToList().Count());
                 foreach (var st in rac.racun_stavka.ToList())
                 {
                        var proizvod = db.proizvods.First(o => o.SifraProizvoda == st.SifraProizvoda);
-                       Console.WriteLine(proizvod.Naziv + " " + st.SifraProizvoda + "  " + st.Kolicina + "  " + st.Cijena);
+                      // Console.WriteLine(proizvod.Naziv + " " + st.SifraProizvoda + "  " + st.Kolicina + "  " + st.Cijena);
                        if (proizvod.tipProizvoda == id)
                        {
                            sum+=st.Kolicina;
-                       }
-                   
+                       }                   
                 }
             }
+            return sum;
+        }
+
+        private int itemsTotal()
+        {
+            int n = 0;
+            foreach(var rac in db.racuns.ToList())
+            {
+                foreach(var stavka in rac.racun_stavka.ToList())
+                {
+                    n += stavka.Kolicina;
+                }
+            }
+
+            return n;
+        }
+
+        private Decimal totalProfit()
+        {
+            Decimal sum = 0;
+            foreach(var rac in db.racuns.ToList())
+            {
+                sum += rac.CijenaUkupno;
+            }
+
             return sum;
         }
     }

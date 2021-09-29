@@ -33,4 +33,9 @@
     <system:String x:Key="Quantity">Quantity</system:String>
     <system:String x:Key="ProductName">Product Name</system:String>
     <system:String x:Key="AddImage">Add Image</system:String>
+    <system:String x:Key="ItemsSold">NUMBER OF SOLD ITEMS</system:String>
+    <system:String x:Key="Profit">PROFIT</system:String>
+    <system:String x:Key="MonthProfit">Profit Based On Month</system:String>
+    <system:String x:Key="Bills">BILLS</system:String>
+
 </ResourceDictionary>

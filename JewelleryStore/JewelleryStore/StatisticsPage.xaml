@@ -30,10 +30,11 @@
               Background="{DynamicResource PrimaryHueLightBrush}"
               Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
               Padding="8"
-              UniformCornerRadius="6" Margin="52,16,233,10">
+              UniformCornerRadius="6" Margin="52,16,227,10">
             <TextBlock
                 TextWrapping="Wrap"
-                Text="You can adjust the corner radius" />
+                FontWeight="Bold"
+                Text="{DynamicResource Profit}" Margin="0,0,0,19" />
 
         </materialDesign:Card>
 
@@ -42,12 +43,20 @@
               Background="{DynamicResource PrimaryHueLightBrush}"
               Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
               Padding="8"
-              UniformCornerRadius="6" Margin="252,16,34,10">
+
+              UniformCornerRadius="6" Margin="252,16,28,10">
+
             <TextBlock
                 TextWrapping="Wrap"
-                Text="You can adjust the corner radius" />
+                FontWeight="Bold"
+                Text="{DynamicResource ItemsSold}" Margin="0,0,-6,0" />
+
+
 
         </materialDesign:Card>
+
+        <Label x:Name="profitLabel" Foreground="White" HorizontalContentAlignment="Center" FontSize="15" FontWeight="Bold" Height="30" Margin="52,42,227,10"/>
+        <Label x:Name="itemsLabel" Foreground="White" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="15" Height="30"  Margin="252,42,28,10"/>
 
         <lvc:PieChart Grid.Row="1" Series="{Binding SeriesCollection}" LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="True"  Margin="10,22,0,10">
             <lvc:PieChart.ChartLegend >
@@ -57,6 +66,32 @@
                 <lvc:DefaultTooltip BulletSize="20"/>
             </lvc:PieChart.DataTooltip>
         </lvc:PieChart>
+
+        <materialDesign:Card
+            Grid.Column="1"
+            Grid.RowSpan="2"
+            Margin="10"
+            Background="{DynamicResource MaterialDesignLightBackground}"
+              materialDesign:ShadowAssist.ShadowDepth="Depth3"
+              materialDesign:ShadowAssist.ShadowEdges="All"
+             
+               >
+
+
+        </materialDesign:Card>
+
+        <Label Content="{DynamicResource Bills}" FontWeight="Bold" Foreground="{DynamicResource PrimaryHueLightBrush}" Grid.Column="1" Margin="119,10,107,48"/>
+        <materialDesign:PackIcon Kind="Identifier" Foreground="{DynamicResource PrimaryHueLightBrush}" Margin="32,39,0,0" Grid.Column="1"></materialDesign:PackIcon>
+        <materialDesign:PackIcon Kind="ClockTimeThreeOutline" Foreground="{DynamicResource PrimaryHueLightBrush}" Margin="112,39,0,0" Grid.Column="1"/>
+        <materialDesign:PackIcon Kind="CurrencyUsd" Foreground="{DynamicResource PrimaryHueLightBrush}" Margin="184,39,0,0" Grid.Column="1"></materialDesign:PackIcon>
+        <materialDesign:PackIcon Kind="User" Foreground="{DynamicResource PrimaryHueLightBrush}" Margin="231,39,0,0" Height="16" VerticalAlignment="Top" Grid.Column="1"></materialDesign:PackIcon>
+
+        <ScrollViewer  Grid.Column="1" Grid.RowSpan="2" Margin="12,60,12,20">
+            <StackPanel x:Name="Bills" HorizontalAlignment="Center" Height="298">
+              
+               
+            </StackPanel>
+        </ScrollViewer>
 
     </Grid>
 </Page>
