@@ -43,6 +43,10 @@ namespace JewelleryStore
 
         public bool isActive { get; set; }
 
+        [Required]
+        [StringLength(45)]
+        public string Tema { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<racun> racuns { get; set; }
     }

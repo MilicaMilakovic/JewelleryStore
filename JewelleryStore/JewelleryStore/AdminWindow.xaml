@@ -41,7 +41,7 @@
                 Style="{StaticResource MaterialDesignFlatLightButton}" 
                 Content="{DynamicResource Products}"
                 IsDefault="True"
-                Foreground="#36BEB3"
+                Foreground="{DynamicResource PrimaryHueLightBrush}"
                 VerticalAlignment="Top"
                
                 Height="50" Margin="0,29,0,0" />
@@ -49,7 +49,7 @@
                 Click="ShowStaff"
                 Style="{StaticResource MaterialDesignFlatLightButton}" 
                 Content="{DynamicResource Staff}"
-                Foreground="#36BEB3"
+                Foreground="{DynamicResource PrimaryHueLightBrush}"
                 VerticalAlignment="Top"
                
                 Height="50" Margin="0,84,0,0" />
@@ -57,7 +57,7 @@
                 Click="ShowStatistics"
                 Style="{StaticResource MaterialDesignFlatLightButton}" 
                 Content="{DynamicResource Statistics}"
-                Foreground="#36BEB3"
+                Foreground="{DynamicResource PrimaryHueLightBrush}"
                 VerticalAlignment="Top"
                
                 Height="50" Margin="0,139,0,0" />
@@ -67,17 +67,17 @@
               Grid.Column="1" HorizontalAlignment="Right"
               Orientation="Horizontal"
               Margin="4">
-                        <RadioButton Checked="ChangeTheme"
+                        <RadioButton Checked="ChangeTheme" Cursor="Hand"
                 Style="{StaticResource MaterialDesignTabRadioButton}"
                 Margin="4"          
                 Tag="Theme1"
                 Content="{DynamicResource Blue}" />
-                        <RadioButton Checked="ChangeTheme"
+                        <RadioButton Checked="ChangeTheme" Cursor="Hand"
                 Style="{StaticResource MaterialDesignTabRadioButton}"
                 Margin="4"
                 Tag="Theme2"  IsChecked="False"
                 Content="{DynamicResource Red}" />
-                        <RadioButton Checked="ChangeTheme"
+                        <RadioButton Checked="ChangeTheme" Cursor="Hand"
                 Style="{StaticResource MaterialDesignTabRadioButton}"
                 Margin="4"
                 IsChecked="False" Tag="Theme3"                
@@ -97,7 +97,7 @@
 
 
         <!-- content -->
-        <Frame x:Name="myFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="2">
+        <Frame Background="{DynamicResource MaterialDesignPaper}" x:Name="myFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="2">
 
         </Frame>
 

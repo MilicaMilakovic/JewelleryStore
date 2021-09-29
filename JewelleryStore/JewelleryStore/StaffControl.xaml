@@ -18,7 +18,7 @@
             <ColumnDefinition Width="142*"/>
         </Grid.ColumnDefinitions>
 
-        <materialDesign:PackIcon Kind="UserCircleOutline" Height="50" Foreground="#80CBC4" Width="50" Margin="0,0,25,23" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+        <materialDesign:PackIcon Kind="UserCircleOutline" Height="50" Foreground="{DynamicResource PrimaryHueLightBrush}" Width="50" Margin="0,0,25,23" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
         <Separator Background="#80CBC4" VerticalAlignment="Bottom" Grid.ColumnSpan="7" Height="1" Margin="0,0,0,2"/>
 
         <TextBlock x:Name="nameLabel" Grid.Column="1"  Margin="7,39,6,30" />

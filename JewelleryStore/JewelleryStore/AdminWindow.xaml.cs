@@ -22,12 +22,20 @@ namespace JewelleryStore
     public partial class AdminWindow : Window
     {
         StoreDb db = new StoreDb();
-        public static zaposleni admin;
+        zaposleni admin;
+        public static int id;
 
         public AdminWindow()
         {
             InitializeComponent();
             myFrame.Source = new Uri("pack://application:,,,/ProductsPage.xaml");
+
+            admin = db.zaposlenis.First(o => o.idZaposlenog == id);
+
+            if (admin.Tema == "Theme1") SwitchTheme1();
+            else if (admin.Tema == "Theme2") SwitchTheme2();
+            else SwitchTheme3();
+
         }
 
         private void ToSerbian(object sender, RoutedEventArgs e)
@@ -102,7 +110,10 @@ namespace JewelleryStore
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary1);
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary2);
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary3);
-            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary4);           
+            Application.Current.Resources.MergedDictionaries.Add(resourceDictionary4);
+
+            admin.Tema = "Theme1";
+            db.SaveChanges();
         }
 
         private void SwitchTheme2()
@@ -121,7 +132,9 @@ namespace JewelleryStore
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary2);
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary3);
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary4);
-           
+
+            admin.Tema = "Theme2";
+            db.SaveChanges();
         }
 
 
@@ -141,7 +154,9 @@ namespace JewelleryStore
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary2);
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary3);
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary4);
-           
+
+            admin.Tema = "Theme3";
+            db.SaveChanges();
         }
     }
 }

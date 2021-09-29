@@ -26,15 +26,21 @@ namespace JewelleryStore
     {
         private StoreDb db = new StoreDb();       
         private List<proizvod> selectedItems = new List<proizvod>();
-        public static zaposleni staff;
+        zaposleni staff;
         racun racun1;
+        public static int id;
 
         public MainWindow()
         {
             InitializeComponent();
-            user.Content = staff.Ime;
-            var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            mainImage.Source = new BitmapImage(new Uri(projectPath + "/images/mainImage.jpg"));
+
+            staff = db.zaposlenis.First(o => o.idZaposlenog == id);
+
+            if (staff.Tema == "Theme1") SwitchTheme1();
+            else if (staff.Tema == "Theme2") SwitchTheme2();
+            else SwitchTheme3();
+
+            user.Content = staff.Ime;          
             ShowAll();
         }
 
@@ -329,6 +335,9 @@ namespace JewelleryStore
 
             var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             mainImage.Source = new BitmapImage(new Uri(projectPath + "/images/mainImage.jpg"));
+
+            staff.Tema = "Theme1";
+            db.SaveChanges();
         }
 
         private void SwitchTheme2()
@@ -350,6 +359,9 @@ namespace JewelleryStore
 
             var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             mainImage.Source = new BitmapImage(new Uri(projectPath + "/images/mainPhoto3.jpg"));
+
+            staff.Tema = "Theme2";
+            db.SaveChanges();
         }
 
 
@@ -372,6 +384,9 @@ namespace JewelleryStore
 
             var projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             mainImage.Source = new BitmapImage(new Uri(projectPath + "/images/mainPhoto.jpg"));
+
+            staff.Tema = "Theme3";
+            db.SaveChanges();
         }
     }
 }

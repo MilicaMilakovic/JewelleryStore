@@ -8,7 +8,7 @@ namespace JewelleryStore
     public partial class StoreDb : DbContext
     {
         public StoreDb()
-            : base("name=StoreDb3")
+            : base("name=StoreDb4")
         {
         }
 
@@ -66,6 +66,10 @@ namespace JewelleryStore
 
             modelBuilder.Entity<zaposleni>()
                 .Property(e => e.Lozinka)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<zaposleni>()
+                .Property(e => e.Tema)
                 .IsUnicode(false);
 
             modelBuilder.Entity<zaposleni>()

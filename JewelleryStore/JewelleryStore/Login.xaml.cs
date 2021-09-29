@@ -34,7 +34,7 @@ namespace JewelleryStore
             if (db.zaposlenis.Any(o => o.KorisnickoIme == u && o.Lozinka == p))
             {
                 Console.WriteLine("Uspjesna prijava!");
-                MainWindow.staff = db.zaposlenis.First(o => o.KorisnickoIme == u && o.Lozinka == p);
+                MainWindow.id = db.zaposlenis.First(o => o.KorisnickoIme == u && o.Lozinka == p).idZaposlenog;
                 new MainWindow().Show();
                 this.Close();
             }
@@ -53,7 +53,7 @@ namespace JewelleryStore
             if (db.zaposlenis.Any(o => o.KorisnickoIme == u && o.Lozinka == p && o.isAdmin == true))
             {
                 Console.WriteLine("Uspjesna prijava!");
-                AdminWindow.admin = db.zaposlenis.First(o => o.KorisnickoIme == u && o.Lozinka == p && o.isAdmin == true);
+                AdminWindow.id = db.zaposlenis.First(o => o.KorisnickoIme == u && o.Lozinka == p && o.isAdmin == true).idZaposlenog;
                 new AdminWindow().Show();
                 this.Close();
             }

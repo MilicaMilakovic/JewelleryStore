@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `store_db`.`ZAPOSLENI` (
   `Plata` DECIMAL(6,2) NOT NULL,
   `isAdmin` TINYINT(1) NOT NULL,
   `isActive` TINYINT(1) NOT NULL,
+  `Tema` VARCHAR(45) NOT NULL DEFAULT 'Theme1',
   PRIMARY KEY (`idZaposlenog`))
 ENGINE = InnoDB;
 
