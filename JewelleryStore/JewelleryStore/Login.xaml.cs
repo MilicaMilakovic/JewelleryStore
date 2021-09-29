@@ -53,6 +53,7 @@ namespace JewelleryStore
             if (db.zaposlenis.Any(o => o.KorisnickoIme == u && o.Lozinka == p && o.isAdmin == true))
             {
                 Console.WriteLine("Uspjesna prijava!");
+                AdminWindow.admin = db.zaposlenis.First(o => o.KorisnickoIme == u && o.Lozinka == p && o.isAdmin == true);
                 new AdminWindow().Show();
                 this.Close();
             }

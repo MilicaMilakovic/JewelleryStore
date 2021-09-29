@@ -14,7 +14,7 @@
         <ResourceDictionary Source="/Resources/Styles.xaml"/>
     </Window.Resources>
 
-    <Grid>
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160*"/>
             <ColumnDefinition Width="527*"/>
@@ -30,12 +30,12 @@
             <RowDefinition Height="31*"/>
         </Grid.RowDefinitions>
 
-        <!-- side navbar -->        
-        <Rectangle Grid.Column="0" Grid.RowSpan="6" Fill="#E2EEED"                  
+        <!-- side navbar -->
+        <Rectangle Grid.Column="0" Grid.RowSpan="6" Opacity="0.3" Fill="{DynamicResource PrimaryHueLightBrush}"                  
                    materialDesign:ShadowAssist.ShadowDepth="Depth2"
                    materialDesign:ShadowAssist.ShadowEdges="Right"/>
 
-        
+
         <Button x:Name="ProductsBtn" Grid.Row="3"
                 Click="ShowProducts"
                 Style="{StaticResource MaterialDesignFlatLightButton}" 
@@ -62,15 +62,30 @@
                
                 Height="50" Margin="0,139,0,0" />
 
+
+        <StackPanel 
+              Grid.Column="1" HorizontalAlignment="Right"
+              Orientation="Horizontal"
+              Margin="4">
+                        <RadioButton Checked="ChangeTheme"
+                Style="{StaticResource MaterialDesignTabRadioButton}"
+                Margin="4"          
+                Tag="Theme1"
+                Content="{DynamicResource Blue}" />
+                        <RadioButton Checked="ChangeTheme"
+                Style="{StaticResource MaterialDesignTabRadioButton}"
+                Margin="4"
+                Tag="Theme2"  IsChecked="False"
+                Content="{DynamicResource Red}" />
+                        <RadioButton Checked="ChangeTheme"
+                Style="{StaticResource MaterialDesignTabRadioButton}"
+                Margin="4"
+                IsChecked="False" Tag="Theme3"                
+                Content="{DynamicResource Brown}" />
+        </StackPanel>
+
         <!-- log out button -->
-        <Button Click="LogOut"
-                Grid.Row="4" VerticalAlignment="Bottom" 
-                Style="{StaticResource MaterialDesignIconButton}"
-                Margin="0,0,56,0" Width="48" RenderTransformOrigin="0.493,0.5" HorizontalAlignment="Right">
-                <materialDesign:PackIcon
-                     Kind="Logout" />
-        </Button>
-        
+
         <!-- logo -->
         <Image Source="/images/logo.png" Grid.Column="0" Margin ="10,0"  Grid.ColumnSpan="1" RenderTransformOrigin="0.507,0.544"/>
         <Label x:Name="pageLabel"
@@ -79,13 +94,13 @@
                FontWeight="Bold" Foreground="#36BEB3"
                VerticalAlignment="Center" Height="28"/>
 
-      
-        
+
+
         <!-- content -->
         <Frame x:Name="myFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="2">
-            
+
         </Frame>
-        
+
         <!-- user -->
         <materialDesign:Chip Grid.Column="2" 
             Content="Admin"
@@ -101,6 +116,13 @@
                 materialDesign:ToggleButtonAssist.OnContent="EN" Canvas.Left="291" Canvas.Top="321" Height="32" Width="32" 
                 materialDesign:ShadowAssist.ShadowDepth="Depth1"
                 Margin="0,0,15,8" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
-    
+        <Button Click="LogOut"
+                Grid.Row="4" VerticalAlignment="Bottom" 
+                Style="{StaticResource MaterialDesignIconButton}"
+                Margin="0,0,56,0" Width="48" RenderTransformOrigin="0.493,0.5" HorizontalAlignment="Right">
+            <materialDesign:PackIcon
+                     Kind="Logout" />
+        </Button>
+
     </Grid>
 </Window>
