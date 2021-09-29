@@ -43,7 +43,7 @@ namespace JewelleryStore
                 new PieSeries
                 {
                     Title = (string) App.Current.Resources["Necklaces"],
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(5)},
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(necklaces)},
                     DataLabels = true
 
                 },
@@ -89,17 +89,21 @@ namespace JewelleryStore
         private int count(int id)
         {
             int sum = 0;
+           // Console.WriteLine(id);
            foreach (var rac in db.racuns.ToList())
            {
+                //Console.WriteLine("racun : " + rac.idRacuna + " " + db.racuns.ToList().Count());
                 foreach (var st in rac.racun_stavka.ToList())
                 {
-                    var proizvod = db.proizvods.First(o => o.SifraProizvoda == st.SifraProizvoda);
-                    if (proizvod.tipProizvoda == id)
-                    {
-                        ++sum;
-                    }
+                       var proizvod = db.proizvods.First(o => o.SifraProizvoda == st.SifraProizvoda);
+                       Console.WriteLine(proizvod.Naziv + " " + st.SifraProizvoda + "  " + st.Kolicina + "  " + st.Cijena);
+                       if (proizvod.tipProizvoda == id)
+                       {
+                           sum+=st.Kolicina;
+                       }
+                   
                 }
-           }
+            }
             return sum;
         }
     }
