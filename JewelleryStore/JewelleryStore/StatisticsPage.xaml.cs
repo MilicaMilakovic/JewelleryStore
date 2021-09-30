@@ -81,6 +81,7 @@ namespace JewelleryStore
                 rac.Margin = new Thickness(3);
                 rac.Background = (Brush)new BrushConverter().ConvertFrom("#E8E8E8");
                 rac.FontWeight = FontWeights.SemiBold;
+                rac.FontSize = 14;
 
                 System.Windows.Controls.Separator sep = new System.Windows.Controls.Separator();
                 sep.Background = Brushes.Gray;

@@ -48,7 +48,10 @@ namespace JewelleryStore
 
         private void AddUser(object sender, RoutedEventArgs e)
         {
-            new EditUser().Show();
+           EditUser edit= new EditUser();
+            edit.Closed += (s,ee) => Refresh(sender,e);
+            edit.Show();
+
         }
 
         /*

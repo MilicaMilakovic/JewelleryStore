@@ -215,6 +215,7 @@ namespace JewelleryStore
             scrollBarViewer.Visibility = Visibility.Collapsed;
 
             checkoutSV.Visibility = Visibility.Visible;
+            backBtn.Visibility = Visibility.Visible;
 
             racun1 = new racun();
             db.racuns.Add(racun1);
@@ -242,6 +243,8 @@ namespace JewelleryStore
             priceLabel.Visibility = Visibility.Visible;
             nextBtn.Visibility = Visibility.Collapsed;
             finishBtn.Visibility = Visibility.Visible;
+            //
+            backBtn.Visibility = Visibility.Collapsed;
         }
 
         private void GoBack(object sender, RoutedEventArgs e)
@@ -266,18 +269,28 @@ namespace JewelleryStore
 
         private void Finish(object sender, RoutedEventArgs e)
         {
+            //if (checkout.Children.Count == 0)
+            //{
+            //    backBtn.Visibility = Visibility.Visible;
+            //    selectedItems.Clear();
+            //    racun1.racun_stavka.Clear();
+            //    db.racuns.Remove(racun1);
+            //    db.SaveChanges();
+            //    return;
+            //}
+
             backBtn.Visibility = Visibility.Visible;
             finishBtn.IsEnabled = false;
             decimal total = 0;
             foreach (var stavka in racun1.racun_stavka)
             {
-                Console.WriteLine(stavka.proizvod.Naziv + " " +stavka.Kolicina + " " + stavka.Cijena + " " +stavka.racun.idRacuna );
+                //Console.WriteLine(stavka.proizvod.Naziv + " " +stavka.Kolicina + " " + stavka.Cijena + " " +stavka.racun.idRacuna );
                 total += stavka.Cijena;
             }
 
             racun1.CijenaUkupno = total;
             racun1.DatumIzdavanja = DateTime.Now;
-            racun1.ZAPOSLENI_idZaposlenog = staff.idZaposlenog;
+            racun1.ZAPOSLENI_idZaposlenog = id;
 
             db.SaveChanges();
             priceLabel.Content = ": BAM " + total;

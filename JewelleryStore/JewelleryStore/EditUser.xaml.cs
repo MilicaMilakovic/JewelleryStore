@@ -80,14 +80,15 @@ namespace JewelleryStore
             if (lastnameField.Text != "") user.Prezime = lastnameField.Text;
             if (usernameField.Text != "") user.KorisnickoIme = usernameField.Text;
             if (passwordField.Text != "") user.Lozinka = passwordField.Text;
-            if (salaryField.Text != "") user.Plata = Int32.Parse(salaryField.Text);
+            if (salaryField.Text != "") user.Plata = Decimal.Parse(salaryField.Text);
             user.isAdmin = (bool)adminCheckBox.IsChecked;
 
             if (dateSince.SelectedDate != null)
                 user.ZaposlenOd = (DateTime)dateSince.SelectedDate;
 
             user.isActive = true;
-
+            user.Tema = "Theme1";
+           
             db.zaposlenis.Add(user);
             db.SaveChanges();
             this.Close();

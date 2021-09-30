@@ -77,6 +77,11 @@ namespace JewelleryStore
             }
         }
 
+        private void Refresh(object sender, RoutedEventArgs e)
+        {
+            ShowAll();
+        }
+
         private void Search(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Enter)
@@ -176,7 +181,7 @@ namespace JewelleryStore
                 editBtn.IsEnabled = false;
             }
 
-            Console.WriteLine(product.Naziv);
+            //Console.WriteLine(product.Naziv);
         }
 
         private void DeleteProduct(object sender, RoutedEventArgs e)
@@ -190,7 +195,9 @@ namespace JewelleryStore
 
         private void AddProduct(object sender, RoutedEventArgs e)
         {
-            new ProductDialog().Show();
+           ProductDialog pd =  new ProductDialog();
+            pd.Closed += (s, ee) => Refresh(sender, e);
+            pd.Show();
         }
 
         private void EditButton(object sender, RoutedEventArgs e)

@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JewelleryStore"
         mc:Ignorable="d"
-    Title="MainWindow" Height="650" Width="1030"
+        Title="JewelleryStore" Height="650" Width="1030"
         WindowStartupLocation="CenterScreen"
      
         ResizeMode="NoResize"
@@ -77,7 +77,7 @@
     </Window.Resources>
 
 
-    <Border Background="White" >
+    <Border BorderBrush="{DynamicResource PrimaryHueLightBrush}" BorderThickness="3" >
 
         <Grid ShowGridLines="False" Background="{DynamicResource MaterialDesignPaper}">
 
