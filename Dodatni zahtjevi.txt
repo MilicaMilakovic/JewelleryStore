@@ -14,7 +14,7 @@ U sklopu JewelleryStore aplikacije, implementirani su sljedeći dodatni zahtjevi
 		za zaposlene. Korisnički odabir se pamti, te se ista tema postavlja i pri njegovom narednom prijavljivanju na sistem.	
 	
 	-Korisničko uputstvo
-		Dostavljeno u .pdf formatu
+		Dostavljeno u .pdf formatu, pod nazivom "Jewellery Store - Uputstvo za upotrebu"
 
 	-Instalacija i uputstvo za instalaciju
 
