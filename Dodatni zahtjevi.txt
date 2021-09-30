@@ -1,0 +1,22 @@
+U sklopu JewelleryStore aplikacije, implementirani su sljedeći dodatni zahtjevi:
+
+	-Podrška za različite tipove korisnika
+		Aplikacija podržava dva tipa korisnika - zaposlenog radnika i administratora.
+		Zaposleni evidentira prodaju dostupnih artikala, te za iste izdaje fiskalne račune, dok administrator
+		vodi evidenciju o proizvodima i zaposlenim, te ima uvid u statistiku poslovanja radnje za prodaju nakita.
+
+	-Internacionalizacija
+		U sklopu aplikacije podržani su engleski i srpski jezik. Promjena jezika je dostupna na stranici za prijavu
+		na sistem, na glavnoj stranici za zaposlene, kao i u administratorskom dijelu aplikacije.
+
+	-Korisnička podešavanja
+		Podržane su tri različite teme. Odabir tema se vrši na administratorskom dijelu i/ili dijelu aplikacije
+		za zaposlene. Korisnički odabir se pamti, te se ista tema postavlja i pri njegovom narednom prijavljivanju na sistem.	
+	
+	-Korisničko uputstvo
+		Dostavljeno u .pdf formatu
+
+	-Instalacija i uputstvo za instalaciju
+
+
+	

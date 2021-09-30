@@ -111,11 +111,13 @@ namespace JewelleryStore
             product.Naziv = nameField.Text;
             product.Cijena = Decimal.Parse(priceField.Text);
             product.Kolicina = Int32.Parse(quantityField.Text);
-            product.tipProizvoda = tipProizvoda.SelectedIndex;
+            product.tipProizvoda = tipProizvoda.SelectedIndex+1;
 
             if (img != null)
                 product.Slika = img;
 
+            product.isActive = true;
+            db.proizvods.Add(product);
             db.SaveChanges();
             this.Close();
         }

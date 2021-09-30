@@ -187,7 +187,7 @@ namespace JewelleryStore
 
             if (selectedItems.Count > 0) nextBtn.IsEnabled = true;
             else nextBtn.IsEnabled = false;
-            Console.WriteLine(product.Naziv);
+            //Console.WriteLine(product.Naziv);
         }
 
 
