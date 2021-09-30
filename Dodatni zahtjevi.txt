@@ -17,6 +17,6 @@ U sklopu JewelleryStore aplikacije, implementirani su sljedeći dodatni zahtjevi
 		Dostavljeno u .pdf formatu, pod nazivom "Jewellery Store - Uputstvo za upotrebu"
 
 	-Instalacija i uputstvo za instalaciju
-
+		Dostavljeno u .pdf formatu, pod nazivom "Jewellery Store - Uputstvo za instalaciju
 
 	
